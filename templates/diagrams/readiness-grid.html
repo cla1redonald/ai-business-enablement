@@ -1,0 +1,27 @@
+<!doctype html>
+<!-- TEMPLATE: readiness grid. The 20 area names are the kit taxonomy and stay fixed; set each cell's class per rating: ip (in place), pt (partial), gp (gap). Adjust the legend note if any area is rated blocked. --><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#20262B;--accent:#2F4B6E;--grey:#7A848D;--pale:#E4E7EA;--paper:#FAFAF8}
+*{box-sizing:border-box;margin:0}
+body{width:1400px;height:610px;font-family:'DM Sans',sans-serif;background:#fff;color:var(--ink);padding:44px 70px}
+.eb{font-size:15px;font-weight:700;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+h1{font-size:34px;font-weight:700;margin-top:8px}
+.legend{display:flex;gap:26px;margin-top:2px;font-size:13.5px;color:var(--grey);align-items:center}
+.sw{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:7px;vertical-align:-2px}
+.row{display:grid;grid-template-columns:250px 1fr 1fr 1fr 1fr;gap:12px;margin-top:12px;align-items:stretch}
+.theme{font-size:15px;font-weight:700;display:flex;align-items:center}
+.cell{border-radius:10px;padding:13px 15px;font-size:13.5px;font-weight:500;line-height:1.3;display:flex;align-items:center;min-height:74px}
+.ip{background:var(--ink);color:#fff}
+.pt{background:var(--pale);color:var(--ink)}
+.gp{background:#fff;border:2px solid var(--accent);color:var(--ink)}
+.foot{margin-top:22px;font-size:14px;color:var(--grey)}
+.foot b{color:var(--ink)}
+</style></head><body>
+<div class="legend"><span><span class="sw" style="background:var(--ink)"></span>In place</span><span><span class="sw" style="background:var(--pale)"></span>Partial</span><span><span class="sw" style="border:2px solid var(--accent);background:#fff"></span>Gap</span><span>No area is rated blocked</span></div>
+<div class="row"><div class="theme">Trusted information</div><div class="cell ip">System connectivity</div><div class="cell pt">Knowledge and document access</div><div class="cell pt">Data boundaries</div><div class="cell gp">Internal data</div></div>
+<div class="row"><div class="theme">Hosting and identity</div><div class="cell ip">Assistant estate</div><div class="cell pt">Agent hosting</div><div class="cell pt">Identity and service accounts</div><div class="cell gp">Permission scoping</div></div>
+<div class="row"><div class="theme">Control and accountability</div><div class="cell ip">AI policy</div><div class="cell pt">Supplier and connector approval</div><div class="cell pt">Incident response</div><div class="cell gp">Output verification</div></div>
+<div class="row"><div class="theme">Proof</div><div class="cell ip">Usage and activity</div><div class="cell pt">Audit evidence</div><div class="cell pt">Value measurement</div><div class="cell gp">Cost attribution</div></div>
+<div class="row"><div class="theme">Adoption and capacity</div><div class="cell ip">Individual capability</div><div class="cell pt">Shared practice and training</div><div class="cell pt">Distribution and reuse</div><div class="cell gp">Ownership and capacity</div></div>
+</body></html>

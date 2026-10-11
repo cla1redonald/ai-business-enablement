@@ -1,0 +1,140 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Customer status query to answered customer</title>
+<style>
+:root{
+  --ink:#20262B;        /* body and heading text */
+  --accent:#2F4B6E;     /* constraint, high grades, flags */
+  --line:#D9DDE0;       /* borders and rules */
+  --muted:#9AA3AB;      /* secondary text */
+  --link:#1D4ED8;       /* links */
+  --paper:#FFFFFF;      /* page background */
+  --font-head:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ink);background:var(--paper);max-width:900px;margin:0 auto;padding:3rem 2rem 4rem}
+h1,h2,h3{font-family:var(--font-head);color:var(--ink)}
+h1{font-weight:800;font-size:2rem;margin:0 0 .5rem}
+h3{font-weight:700;font-size:1rem;margin:.1rem 0 .3rem}
+a{color:var(--link)}
+.lede{margin:0 0 1.6rem;max-width:72ch}
+.coverage{border:1px solid var(--line);border-radius:10px;padding:.8rem 1.1rem;margin:1.2rem 0;font-size:.92rem}
+.bn-why{border-left:3px solid var(--accent);padding:.6rem 1.1rem;margin:1.4rem 0}
+.bn-why p{margin:.5rem 0;font-size:.95rem}
+.step{display:flex;gap:1rem;border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem;margin:.55rem 0;background:var(--paper)}
+.step + .step{position:relative}
+.step + .step::before{content:"";position:absolute;left:2.1rem;top:-.6rem;height:.6rem;border-left:2px solid var(--line)}
+.step-bottleneck{border-color:var(--accent);border-width:2px}
+.step-n{flex:0 0 2.2rem;height:2.2rem;border-radius:50%;background:var(--line);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--font-head)}
+.step-bottleneck .step-n{background:var(--accent);color:#FFFFFF}
+.step-body{flex:1}
+.step-owner{margin:0 0 .45rem;color:var(--muted);font-size:.9rem}
+.chips{margin:.25rem 0;display:flex;flex-wrap:wrap;gap:.3rem}
+.chip{display:inline-block;padding:.12rem .55rem;border-radius:999px;font-size:.78rem;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.chip-sys{background:var(--paper)}
+.chip-soft{color:var(--muted);font-style:italic}
+.chip-measured{background:var(--ink);border-color:var(--ink);color:#FFFFFF;font-weight:700}
+.grade-high{background:var(--accent);border-color:var(--accent);color:#FFFFFF;font-weight:700}
+.grade-medium{border-color:var(--muted);font-weight:700}
+.bn-flag{background:var(--accent);color:#FFFFFF;border-radius:4px;padding:.05rem .45rem;font-size:.72rem;vertical-align:middle;font-family:var(--font-body);font-weight:700}
+.step-note{margin:.4rem 0 0;font-size:.88rem}
+.step-opps{margin-top:.55rem;font-size:.88rem}
+.step-opps ul{margin:.2rem 0 0 1.1rem;padding:0}
+.step-opps li{margin:.2rem 0}
+.note{color:var(--muted);font-size:.85rem;margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1rem}
+.howto{margin-top:2.4rem;border:1px solid var(--line);border-radius:10px;padding:.7rem 1.1rem;font-size:.9rem;color:var(--ink)}
+.howto summary{cursor:pointer;font-weight:700;font-family:var(--font-head)}
+.howto div{margin-top:.6rem}
+@media print{
+@page{size:A4;margin:1.4cm}
+body{padding:0}
+.step{break-inside:avoid}
+.howto{display:block}.howto div{display:block}
+}
+</style></head><body>
+  <h1>Customer status query to answered customer</h1>
+  <p class="lede">From a customer's where-is-it query to an answered customer and any escalation resolved, in 6 steps: how this work travels today, and where it hurts.</p>
+
+  <div class="coverage"><strong>6 steps &nbsp;&middot;&nbsp; pain scored on 0 &nbsp;&middot;&nbsp; timing on 1 &nbsp;&middot;&nbsp; constraint at step 2</strong>. Full reading notes at the foot of the page.</div>
+
+  <div class="bn-why"><strong>Why that step is the constraint</strong>
+    <p><strong>Step 2, gathering the answer across three systems, is the constraint.</strong></p>
+    <ul>
+      <li><strong>The evidence:</strong> the only timed step, paid on every one of about 60 queries a day: about 5 minutes clean and 20 to 30 with a problem, all self reported.</li>
+      <li><strong>Corroboration:</strong> the most-asked question (sailing cut-offs) lives in a spreadsheet that is sometimes updated late, and the one attempt to automate answers died on exactly that staleness.</li>
+      <li><strong>The effect:</strong> the customer is on hold while the agent swivels, so the step's cost is paid in customer time as well as desk time, on every query.</li>
+      <li><strong>What would strengthen the call:</strong> a measured split of clean versus problem queries. The 60-a-day volume and both timings are self reported, so the call rests on consistent tellings rather than measurement.</li>
+      <li><strong>Also unmeasured:</strong> no waits were recorded anywhere on this stream, including the escalation cycle in steps 4 to 6, which nobody can currently track at all. That absence is itself a finding.</li>
+    </ul>
+  </div>
+
+  <article class="step">
+    <div class="step-n">1</div>
+    <div class="step-body">
+      <h3>Status query received</h3>
+      <p class="step-owner">customer service agent</p>
+      <p class="chips"><span class="chip chip-sys">Email</span><span class="chip chip-sys">Phone</span></p>
+      <p class="chips"></p>
+      <p class="step-note">About 60 a day across the team, self reported. Where-is-my-shipment dominates; sailing cut-offs are the single most-asked question.</p>
+    </div>
+  </article>
+  <article class="step step-bottleneck">
+    <div class="step-n">2</div>
+    <div class="step-body">
+      <h3>Answer gathered across three systems <span class="bn-flag">bottleneck</span></h3>
+      <p class="step-owner">customer service agent</p>
+      <p class="chips"><span class="chip chip-sys">Loadstone</span><span class="chip chip-sys">Carrier portal</span><span class="chip chip-sys">Email thread</span></p>
+      <p class="chips"><span class="chip chip-measured">working time: 5 min clean, 20 to 30 with a problem, self reported</span></p>
+      <p class="step-note">The booking in the TMS, the tracking in the carrier's portal, anything odd in the email thread: three places for one answer while the customer holds. A FAQ assistant was tried and abandoned after one confidently stale cut-off answer reached a customer; the team's stated condition for trying again is answers that can be shown right reliably.</p>
+      <div class="step-opps"><strong>Opportunities on this step</strong><ul><li>Status queries answered from the systems (gated on the TMS connector and the verification pattern).</li><li>Cut-off answers, verified and current (gated on the verification pattern).</li></ul></div>
+    </div>
+  </article>
+  <article class="step">
+    <div class="step-n">3</div>
+    <div class="step-body">
+      <h3>Customer answered</h3>
+      <p class="step-owner">customer service agent</p>
+      <p class="chips"><span class="chip chip-sys">Email</span><span class="chip chip-sys">Phone</span></p>
+      <p class="chips"></p>
+      <p class="step-note">Clean queries end here. No record ties the answer back to the query for any later signal, which is where the absent churn measure would start.</p>
+    </div>
+  </article>
+  <article class="step">
+    <div class="step-n">4</div>
+    <div class="step-body">
+      <h3>Escalation raised to operations when stuck</h3>
+      <p class="step-owner">customer service agent</p>
+      <p class="chips"><span class="chip chip-sys">Email</span><span class="chip chip-sys">Phone</span></p>
+      <p class="chips"></p>
+      <p class="step-note">The story is typed into an email or phoned across, and retyped into TMS notes at the operations end. Nobody can show where any given escalation is once raised.</p>
+      <div class="step-opps"><strong>Opportunities on this step</strong><ul><li>Escalations carried once, trackable end to end.</li></ul></div>
+    </div>
+  </article>
+  <article class="step">
+    <div class="step-n">5</div>
+    <div class="step-body">
+      <h3>Operations investigates and phones the carrier</h3>
+      <p class="step-owner">operations lead</p>
+      <p class="chips"><span class="chip chip-sys">Phone</span><span class="chip chip-sys">Loadstone</span></p>
+      <p class="chips"></p>
+      <p class="step-note">The record is typed into the TMS after the fact. The customer is usually chasing before the carrier has answered.</p>
+    </div>
+  </article>
+  <article class="step">
+    <div class="step-n">6</div>
+    <div class="step-body">
+      <h3>Customer updated on resolution</h3>
+      <p class="step-owner">customer service agent</p>
+      <p class="chips"><span class="chip chip-sys">Email</span></p>
+      <p class="chips"></p>
+      <p class="step-note">Closure depends on the agent noticing the operations note; nothing signals it. No timing was given for the end-to-end escalation cycle.</p>
+    </div>
+  </article>
+
+  <details class="howto"><summary>How to read this map</summary><div><strong>What is measured here, and what is not.</strong>
+  0 of 6 steps carry a pain score. 1 carries a timing figure, self reported.
+  This is a flow with the measurements that exist attached, not a full value stream map. Nothing has
+  been estimated to fill a gap, so a step with no figures had none in the evidence. Maturity tags show where AI already sits in a step today: think means AI at this step is still an idea being talked about, work means AI is used in doing the step, and act means AI already takes part of the action itself.</div></details>
+  <p class="note">Prepared by Fieldnote Advisory from the assessment evidence, September 2027. Roles are shown as role descriptions rather than names.</p>
+</body></html>

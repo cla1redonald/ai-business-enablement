@@ -1,0 +1,21 @@
+{
+  "source": "doc_quote-process.md",
+  "sub_type": "document",
+  "observations": [
+    {
+      "id": "OB-D03",
+      "claim": "The written quotation process sets a 30-minute turnaround target for standard lanes (contradicted by the sales lead's account of practice; the document is a claim, not a measurement).",
+      "quote": "Target turnaround: 30 minutes from request for standard lanes.",
+      "locator": "doc_quote-process.md, step 3",
+      "confidence": "low"
+    },
+    {
+      "id": "OB-D04",
+      "claim": "The official quotation process depends on the overnight surcharge pull, which other evidence shows runs on one analyst's laptop under personal logins.",
+      "quote": "Surcharges updated overnight by the automated pull.",
+      "locator": "doc_quote-process.md, closing note",
+      "confidence": "medium",
+      "stated_dependencies": "rate cards are maintained per trade lane on Filestead under Commercial/Rate Cards/"
+    }
+  ]
+}

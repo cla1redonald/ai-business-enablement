@@ -1,0 +1,58 @@
+{
+  "source": "2027-09-23_finance.md",
+  "sub_type": "discovery interview",
+  "observations": [
+    {
+      "id": "OB-F01",
+      "claim": "The Monday margin pack takes a full day every week, hand-built by joining TMS and ledger exports whose references do not match cleanly (self reported).",
+      "quote": "The margin pack is a full day, every week, most of it mine or Maya's.",
+      "locator": "2027-09-23_finance.md, S2",
+      "confidence": "low",
+      "scale": {"cadence": "weekly", "held_by": "the finance lead and deputy personally"}
+    },
+    {
+      "id": "OB-F02",
+      "claim": "About one margin pack in four contains an error, discovered only when a number is challenged (self reported).",
+      "quote": "about one week in four something's wrong in it",
+      "locator": "2027-09-23_finance.md, S2",
+      "confidence": "low"
+    },
+    {
+      "id": "OB-F03",
+      "claim": "Reconciliation takes about 6 hours a week because the same shipment exists in three places and they drift (self reported).",
+      "quote": "Reconciliation generally is about 6 hours a week on top of that.",
+      "locator": "2027-09-23_finance.md, S3",
+      "confidence": "low"
+    },
+    {
+      "id": "OB-F04",
+      "claim": "There is no single home for the company's own operating data: the TMS holds the operational truth, the ledger the financial truth, and nothing sits over both.",
+      "quote": "Loadstone knows the operational truth, Ledgerline knows the financial truth, and nothing sits over both.",
+      "locator": "2027-09-23_finance.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-F05",
+      "claim": "The deputy finance lead builds assistant-generated margin views from hand-exported CSVs, stale on creation; live reachable feeds are the stated want.",
+      "quote": "it's working off a CSV I export by hand, so it's stale the moment I make it",
+      "locator": "2027-09-23_finance.md, S3",
+      "confidence": "medium",
+      "stated_dependencies": "If those were reachable, half the Monday pack builds itself."
+    },
+    {
+      "id": "OB-F06",
+      "claim": "The finance lead requires controls before anything reads the ledger directly.",
+      "quote": "I'd want some controls before anything reads the ledger directly.",
+      "locator": "2027-09-23_finance.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-F07",
+      "claim": "Month end is two to three days of chasing desks to confirm jobs are closed, the same every month (self reported).",
+      "quote": "Two or three days of asking desks to confirm jobs are really closed so we can invoice.",
+      "locator": "2027-09-23_finance.md, S2",
+      "confidence": "low",
+      "scale": {"cadence": "monthly"}
+    }
+  ]
+}

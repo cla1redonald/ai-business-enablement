@@ -1,0 +1,65 @@
+{
+  "source": "2027-09-22_ops-team.md",
+  "sub_type": "discovery interview",
+  "observations": [
+    {
+      "id": "OB-O01",
+      "claim": "Confirmed quotes arrive in operations as forwarded email chains and are entered into the TMS by hand, about 20 per day.",
+      "quote": "nearly always as a forwarded email chain",
+      "locator": "2027-09-22_ops-team.md, S2",
+      "confidence": "medium",
+      "scale": {"cadence": "about 20 bookings across the desk per day"}
+    },
+    {
+      "id": "OB-O02",
+      "claim": "Booking entry takes 10 to 15 minutes when the email is complete, rising to about 30 when it is not (self reported).",
+      "quote": "Ten to fifteen minutes if the email has everything.",
+      "locator": "2027-09-22_ops-team.md, S3",
+      "confidence": "low"
+    },
+    {
+      "id": "OB-O03",
+      "claim": "Roughly a third of bookings arrive incomplete; rate mismatches are the worst case because the invoice picks the rate up downstream (self reported).",
+      "quote": "Maybe a third arrive missing something.",
+      "locator": "2027-09-22_ops-team.md, S3",
+      "confidence": "low",
+      "stated_dependencies": "once it's in Loadstone the invoice picks it up"
+    },
+    {
+      "id": "OB-O04",
+      "claim": "Carrier confirmations can take up to 4 hours, during which the booking stalls and the customer often chases first (self reported).",
+      "quote": "confirmation can take four hours to come back",
+      "locator": "2027-09-22_ops-team.md, S2",
+      "confidence": "low"
+    },
+    {
+      "id": "OB-O05",
+      "claim": "Escalations run by phone with the record typed into the TMS after the fact.",
+      "quote": "whoever spots it rings me, and I ring the carrier, and then I'm typing a note into Loadstone after the fact so there's a record",
+      "locator": "2027-09-22_ops-team.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-O06",
+      "claim": "The operations coordinator built a working email-to-TMS-fields assistant tool; it worked on clean emails, had no route to shared use, and was stopped partly through permission uncertainty.",
+      "quote": "I didn't have anywhere to put it where the others could use it, so it's a thing on my machine. And I wasn't sure I was allowed, to be honest, so I stopped.",
+      "locator": "2027-09-22_ops-team.md, S3",
+      "confidence": "medium",
+      "stated_dependencies": "somewhere to put it where the others could use it"
+    },
+    {
+      "id": "OB-O07",
+      "claim": "Line-by-line manual copying from email into the TMS is standard booking practice, confirmed in the room (the consultant's description was second-hand relay; the coordinator's confirmation is the evidence).",
+      "quote": "No, that's the job. That's what booking entry is.",
+      "locator": "2027-09-22_ops-team.md, S3",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-O08",
+      "claim": "The operations lead weighs the daily keying as the constant cost and carrier waits as the episodic one (her judgement, not the consultant's suggestion, which was framing and is not evidence).",
+      "quote": "Honestly the waits hurt more on the bad days, but the keying is every day.",
+      "locator": "2027-09-22_ops-team.md, S2",
+      "confidence": "medium"
+    }
+  ]
+}

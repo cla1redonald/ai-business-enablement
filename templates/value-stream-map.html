@@ -1,0 +1,107 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{Stream name}</title>
+<!--
+TEMPLATE: step-level value stream map (one file per stream, plus an index.html)
+Slots are {braced}. Generated from data, never hand-copied: every figure on this page
+must come from the facts manifest. Rules that make the map honest:
+- Nothing is estimated to fill a gap: a step with no figures had none in the evidence.
+- Timings and pain are attributed ("self reported") and low-confidence tellings say so.
+- Unresolved differences between two tellings stay unresolved and are named.
+- The constraint call states its evidence, corroboration, effect, what would strengthen
+  it, and what is unmeasured. Read a map by its waits and its pain, not its busiest
+  steps.
+- Roles, never names. Client organisations by neutral token.
+Skin: change the palette variables below; nothing else is branded.
+-->
+<style>
+:root{
+  --ink:#20262B;        /* body and heading text */
+  --accent:#2F4B6E;     /* constraint, high grades, flags */
+  --line:#D9DDE0;       /* borders and rules */
+  --muted:#9AA3AB;      /* secondary text */
+  --link:#1D4ED8;       /* links */
+  --paper:#FFFFFF;      /* page background */
+  --font-head:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ink);background:var(--paper);max-width:900px;margin:0 auto;padding:3rem 2rem 4rem}
+h1,h2,h3{font-family:var(--font-head);color:var(--ink)}
+h1{font-weight:800;font-size:2rem;margin:0 0 .5rem}
+h3{font-weight:700;font-size:1rem;margin:.1rem 0 .3rem}
+a{color:var(--link)}
+.lede{margin:0 0 1.6rem;max-width:72ch}
+.coverage{border:1px solid var(--line);border-radius:10px;padding:.8rem 1.1rem;margin:1.2rem 0;font-size:.92rem}
+.bn-why{border-left:3px solid var(--accent);padding:.6rem 1.1rem;margin:1.4rem 0}
+.bn-why p{margin:.5rem 0;font-size:.95rem}
+.step{display:flex;gap:1rem;border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem;margin:.55rem 0;background:var(--paper)}
+.step + .step{position:relative}
+.step + .step::before{content:"";position:absolute;left:2.1rem;top:-.6rem;height:.6rem;border-left:2px solid var(--line)}
+.step-bottleneck{border-color:var(--accent);border-width:2px}
+.step-n{flex:0 0 2.2rem;height:2.2rem;border-radius:50%;background:var(--line);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--font-head)}
+.step-bottleneck .step-n{background:var(--accent);color:#FFFFFF}
+.step-body{flex:1}
+.step-owner{margin:0 0 .45rem;color:var(--muted);font-size:.9rem}
+.chips{margin:.25rem 0;display:flex;flex-wrap:wrap;gap:.3rem}
+.chip{display:inline-block;padding:.12rem .55rem;border-radius:999px;font-size:.78rem;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.chip-sys{background:var(--paper)}
+.chip-soft{color:var(--muted);font-style:italic}
+.chip-measured{background:var(--ink);border-color:var(--ink);color:#FFFFFF;font-weight:700}
+.grade-high{background:var(--accent);border-color:var(--accent);color:#FFFFFF;font-weight:700}
+.grade-medium{border-color:var(--muted);font-weight:700}
+.bn-flag{background:var(--accent);color:#FFFFFF;border-radius:4px;padding:.05rem .45rem;font-size:.72rem;vertical-align:middle;font-family:var(--font-body);font-weight:700}
+.step-note{margin:.4rem 0 0;font-size:.88rem}
+.step-opps{margin-top:.55rem;font-size:.88rem}
+.step-opps ul{margin:.2rem 0 0 1.1rem;padding:0}
+.step-opps li{margin:.2rem 0}
+.note{color:var(--muted);font-size:.85rem;margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1rem}
+.howto{margin-top:2.4rem;border:1px solid var(--line);border-radius:10px;padding:.7rem 1.1rem;font-size:.9rem;color:var(--ink)}
+.howto summary{cursor:pointer;font-weight:700;font-family:var(--font-head)}
+.howto div{margin-top:.6rem}
+@media print{
+@page{size:A4;margin:1.4cm}
+body{padding:0}
+.step{break-inside:avoid}
+.howto{display:block}.howto div{display:block}
+}
+</style></head><body>
+  <h1>{Stream name: trigger to outcome}</h1>
+  <p class="lede">From {trigger} to {outcome}, in {n} steps: how this work travels today, and where it hurts.</p>
+
+  <div class="coverage"><strong>{n} steps &nbsp;&middot;&nbsp; pain scored on {n_pain} &nbsp;&middot;&nbsp; timing on {n_timed} &nbsp;&middot;&nbsp; constraint at step {k}</strong>. Full reading notes at the foot of the page.</div>
+
+  <div class="bn-why"><strong>Why that step is the constraint</strong>
+    <p><strong>Step {k}, {step name}, is the constraint.</strong></p>
+    <ul>
+      <li><strong>The evidence:</strong> {the figure or pain that makes the call, with attribution}.</li>
+      <li><strong>Corroboration:</strong> {what else supports it}.</li>
+      <li><strong>The effect:</strong> {why its delay cannot be absorbed}.</li>
+      <li><strong>What would strengthen the call:</strong> {the unresolved difference or missing measurement; say if the call is provisional}.</li>
+      <li><strong>Also unmeasured:</strong> {waits or steps with nothing recorded, and what that absence does and does not mean}.</li>
+    </ul>
+  </div>
+
+  <!-- One article per step, in flow order. Add class="step-bottleneck" and the
+       bn-flag span to the constraint step only. Chips row 1: systems (chip-sys), or
+       one chip-soft "no system evidenced". Chips row 2: pain (grade-high 4-5,
+       grade-medium 2-3), any measured timing (chip-measured, with attribution), and
+       an optional maturity tag (chip-soft: think / work / act). -->
+  <article class="step">
+    <div class="step-n">1</div>
+    <div class="step-body">
+      <h3>{Step name}</h3>
+      <p class="step-owner">{role}</p>
+      <p class="chips"><span class="chip chip-sys">{system}</span></p>
+      <p class="chips"><span class="chip grade-medium">pain {x}/5</span><span class="chip chip-measured">working time: {t}, self reported</span></p>
+      <p class="step-note">{What the evidence says about this step, including what was not given.}</p>
+      <div class="step-opps"><strong>Opportunities on this step</strong><ul><li>{opportunity}</li></ul></div>
+    </div>
+  </article>
+
+  <details class="howto"><summary>How to read this map</summary><div><strong>What is measured here, and what is not.</strong>
+  {n_pain} of {n} steps carry a pain score. {n_timed} carry a timing measurement.
+  This is a flow with the measurements that exist attached, not a full value stream map. Nothing has
+  been estimated to fill a gap, so a step with no figures had none in the evidence. Maturity tags show where AI already sits in a step today: think means AI at this step is still an idea being talked about, work means AI is used in doing the step, and act means AI already takes part of the action itself.</div></details>
+  <p class="note">Prepared by {consultancy} from the assessment evidence, {month year}. Roles are shown as role descriptions rather than names.</p>
+</body></html>

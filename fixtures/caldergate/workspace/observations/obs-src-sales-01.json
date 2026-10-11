@@ -1,0 +1,44 @@
+{
+  "source": "2027-09-27_sales.md",
+  "sub_type": "discovery interview",
+  "observations": [
+    {
+      "id": "OB-S01",
+      "claim": "A normal quote takes about 45 minutes and the desk does about 30 a week, working from per-lane rate-card spreadsheets on the shared drive (self reported).",
+      "quote": "45 minutes for a normal one. We do about 30 a week.",
+      "locator": "2027-09-27_sales.md, S2",
+      "confidence": "low",
+      "scale": {"cadence": "about 30 quotes per week"}
+    },
+    {
+      "id": "OB-S02",
+      "claim": "Quote effort varies from about 20 minutes (repeat lane) to over an hour (new lane or customs complications); the sales lead disputes both the sponsor's 20-minute figure and the process note's 30-minute target as describing only the easy cases.",
+      "quote": "A new lane means hunting for rates, and anything with customs complications means asking Femi, and now you're at an hour plus.",
+      "locator": "2027-09-27_sales.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-S03",
+      "claim": "Accepted quotes reach operations as the forwarded email chain because the agreed details are scattered through the thread.",
+      "quote": "I forward the thread to operations. The whole chain, because the details are scattered through it",
+      "locator": "2027-09-27_sales.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-S04",
+      "claim": "A large tender means two people copying between formats for most of a week, with about one in four won (self reported).",
+      "quote": "That's two people for most of a week, copying between their format and ours.",
+      "locator": "2027-09-27_sales.md, S2",
+      "confidence": "low",
+      "scale": {"load": "a two-hundred-lane tender spreadsheet per major prospect"}
+    },
+    {
+      "id": "OB-S05",
+      "claim": "AI is deliberately kept away from rates for fear of invented numbers; a scoped read of the actual rate cards only is the stated condition for changing that.",
+      "quote": "if it invents a number we eat the difference. If it could read the actual rate cards and only the actual rate cards, that changes things.",
+      "locator": "2027-09-27_sales.md, S2",
+      "confidence": "medium",
+      "stated_dependencies": "read the actual rate cards and only the actual rate cards"
+    }
+  ]
+}

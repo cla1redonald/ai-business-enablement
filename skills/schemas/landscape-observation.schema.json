@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://abe-kit.local/schemas/landscape-observation.schema.json",
+  "title": "Landscape observations from one source",
+  "description": "What ONE source evidences about where AI could help. Producing the landscape in a single pass over the whole body of evidence is unstable: a model asked to hold everything and choose what matters makes different choices each time, and two runs over identical sources can share few opportunity names and miss foundations altogether.\n\nThe method therefore reads one source at a time, resolves which observations are the same thing, then merges the results deterministically in code. Because a call sees only one source, its output can be kept against that source's fingerprint, so an unchanged source contributes exactly the same observations on every run. That is where repeatability comes from, and it is also what stops a later addition to the evidence silently dropping an opportunity that an untouched source evidenced.\n\nScope discipline: report only what THIS source supports. Do not reach for what another source might say, do not aggregate, and do not grade. Impact and effort are portfolio judgements made later, once every source has been read.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source_file", "observations"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "source_file": { "type": "string" },
+    "observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } },
+    "nothing_found_reason": {
+      "type": "string",
+      "description": "Set when a source genuinely evidences no opportunity. An empty array with an honest reason is a valid, useful answer: a source that says nothing about where AI could help should not be made to."
+    }
+  },
+  "$defs": {
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_file", "locator", "quote"],
+        "properties": {
+          "source_file": { "type": "string" },
+          "source_type": { "type": "string" },
+          "locator": { "type": "string" },
+          "quote": { "type": "string" },
+          "confidence": { "enum": ["high", "medium", "low"] }
+        }
+      }
+    },
+    "evidenced_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "source_refs"],
+      "description": "A single fact carried in the source's own words, with its own evidence. Never inferred: absent when the source does not state it, never estimated or rounded up from something adjacent. Its own source_refs exist so a claim buried in one sentence of a long transcript is independently checkable, rather than riding on the observation's general evidence.",
+      "properties": {
+        "value": { "type": "string", "description": "What the source states, close to its own words. Not a category or a guess." },
+        "source_refs": { "$ref": "#/$defs/source_refs" }
+      }
+    },
+    "stated_dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "source_refs"],
+      "description": "What the SPEAKER said this depends on or connects to, as a quote-backed claim. This is NOT an identity claim: it records that someone said a link exists, it does not decide that two observations are the same thing or should merge. The resolver still owns identity and merging; this field only stops that reasoning from being thrown away before it reaches the resolver, which is where stated links are otherwise most often lost.",
+      "properties": {
+        "statement": { "type": "string", "description": "The dependency or connection, close to the speaker's own words, e.g. \"can't fix the reporting until the CRM migration finishes\"." },
+        "source_refs": { "$ref": "#/$defs/source_refs" }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "statement", "source_refs"],
+      "description": "One thing this source shows is slow, manual, repetitive or error-prone, WHATEVER the fix turns out to be. Deliberately not scoped to AI: this is the widest net in the method and everything downstream can only work with what it catches. Scoping it to AI can lose a real finding, for example a device-management policy that would remove a manual queue outright, because the observer had no way to record a fix that was not a model. The runner assigns the id, derived from the content, so the same observation from an unchanged source carries the same id on every run.",
+      "properties": {
+        "observation_id": { "type": "string", "description": "Runner-assigned. Anything a model writes here is discarded." },
+        "name": { "type": "string", "description": "Short, plain name for the work involved. Name the work, not a product." },
+        "statement": { "type": "string", "description": "What is slow, manual or error-prone, in the source's own terms." },
+        "function": { "type": "string", "description": "The part of the business this sits in, where the source establishes it." },
+        "work_status": { "enum": ["in_flight", "stalled", "already_solved"], "description": "Set ONLY where the source states that work on this is already happening, has stalled, or is finished. Omitted otherwise, which is the common case. Exists because a portfolio that proposes deep-mapping something the client is already halfway through building is worse than useless: it wastes the spend and tells the room something it already knows. `stalled` is deliberately distinct from `in_flight`, because they carry opposite recommendations: a stalled project needs unblocking, an in-flight one needs leaving alone. Never inferred from a source merely discussing something enthusiastically; the source must say the work exists." },
+        "likely_lever": { "enum": ["ai", "automation", "configuration", "process_change", "policy", "unclear"], "description": "The kind of fix THIS SOURCE points to, not a decision. `ai` needs judgement, drafting or reading unstructured material; `automation` is a scripted job, integration or device-management policy with no model involved; `configuration` is a capability already owned and not switched on; `process_change` removes, merges or reorders a step with nothing built; `policy` is a rule, permission or governance decision. `unclear` is the honest default and should be common, because a source usually describes a problem rather than its remedy. Advisory only: the real decision belongs to the consultant, against a confirmed bottleneck and a full option menu. Optional, so an observation saying nothing about the remedy simply omits it." },
+        "scale": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Cadence, load and headcount, whenever the source states them, each independently evidenced. This exists so that a figure SAID ALOUD in a transcript is not summarised away before it reaches the tool, which would cap an opportunity's impact for want of a number that was in the room. Every one of the three is optional and independent: a source stating cadence but not headcount sets only `cadence`.",
+          "properties": {
+            "cadence": { "$ref": "#/$defs/evidenced_claim", "description": "How often, e.g. \"every month\", \"twice a week\"." },
+            "load": { "$ref": "#/$defs/evidenced_claim", "description": "How much, e.g. \"about three reports\", \"two days\"." },
+            "headcount": { "$ref": "#/$defs/evidenced_claim", "description": "How many people, e.g. \"a team of six\", \"just one person\"." }
+          }
+        },
+        "held_by": {
+          "$ref": "#/$defs/evidenced_claim",
+          "description": "Who carries this work, and whether the source says it is concentrated in one person or a small team, in the source's own words (e.g. \"one person in finance runs the whole reconciliation\"). A portfolio that cannot see who holds a piece of work cannot see that losing them is a risk, such as a planned absence or a retirement. A single free-text claim rather than a derived `concentrated: true/false` flag deliberately: whether something is 'concentrated' is a judgement, and this field must record only what was said, not an inference from it."
+        },
+        "stated_dependencies": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/stated_dependency" },
+          "description": "Every dependency or connection the SPEAKER stated, each as its own quote-backed claim. See `$defs/stated_dependency` for why this is not an identity or merge decision."
+        },
+        "source_refs": { "$ref": "#/$defs/source_refs" }
+      }
+    }
+  }
+}

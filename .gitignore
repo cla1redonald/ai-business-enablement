@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+# Live engagement workspaces never enter this repo; work in a sibling folder.
+engagements/
+# Rendered scratch output. Pack zips are rebuilt by tools/pack.py, never committed.
+*.zip

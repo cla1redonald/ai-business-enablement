@@ -1,0 +1,152 @@
+{
+  "_comment": "Kit-default lint config. Per engagement, copy and fill: names (roles-not-names list for this client), guarded_pairs (figures that must never merge into one claim), any engagement-specific claim rules appended to rules[]. Every rule needs poison and clean fixtures or the self-test refuses to grade.",
+  "rules": [
+    {
+      "id": "dash-em-en",
+      "why": "Em and en dashes are the single most common AI tell",
+      "pattern": "[\u2014\u2013]",
+      "poison": "The team is small \u2014 three engineers \u2014 but effective.",
+      "clean": "The team is small (three engineers) but effective."
+    },
+    {
+      "id": "quotes-curly",
+      "why": "Straight quotes only",
+      "pattern": "[\u2018\u2019\u201c\u201d]",
+      "poison": "The \u201carchitecture\u201d is sound.",
+      "clean": "The \"architecture\" is sound."
+    },
+    {
+      "id": "ellipsis",
+      "why": "Three periods, never the unicode character",
+      "pattern": "\u2026",
+      "poison": "The work continues\u2026",
+      "clean": "The work continues..."
+    },
+    {
+      "id": "banned-vocab",
+      "why": "Banned vocabulary in the house guide",
+      "pattern": "\\b(delve|leverag\\w*|utilis\\w*|robust|seamless|cutting-edge|game-chang\\w*|paradigm|synergi\\w*)\\b",
+      "poison": "This would leverage the existing platform.",
+      "clean": "This would build on the existing platform."
+    },
+    {
+      "id": "ai-phrasing",
+      "why": "Throat-clearing and AI phrasing tells",
+      "pattern": "(it's not just\\b|in essence\\b|at its core\\b|important to note\\b|let's examine\\b|^ultimately,)",
+      "poison": "In essence, the platform is sound.",
+      "clean": "The platform is sound."
+    },
+    {
+      "id": "connective-openers",
+      "why": "Moreover/Furthermore/Additionally as sentence openers",
+      "pattern": "^\\s*(moreover|furthermore|additionally)\\b",
+      "poison": "Furthermore, the team lacks capacity.",
+      "clean": "The team also lacks capacity.",
+      "multiline": true
+    },
+    {
+      "id": "us-spelling",
+      "why": "British spelling throughout",
+      "pattern": "\\b\\w*(analyz|organiz|prioritiz|centraliz|optimiz|realiz|specializ)\\w*\\b|\\b(color|behavior)\\b",
+      "poison": "We need to prioritize the centralized warehouse.",
+      "clean": "We need to prioritise the centralised warehouse."
+    },
+    {
+      "id": "heading-depth",
+      "why": "Only # and ## render in the publishing template",
+      "pattern": "^###+ ",
+      "poison": "### Sub heading\n",
+      "clean": "## Heading\n",
+      "multiline": true
+    },
+    {
+      "id": "bold-in-table",
+      "why": "Inline markdown does not render inside table cells",
+      "pattern": "^\\|.*\\*\\*",
+      "poison": "| **Sales** | 17.3 |\n",
+      "clean": "| Sales | 17.3 |\n",
+      "multiline": true
+    },
+    {
+      "id": "invented-scale",
+      "why": "Readiness has exactly four values and no numeric scale",
+      "pattern": "\\b(maturity (score|level|rating)|readiness score|scored \\d+\\s*/\\s*\\d+|\\d+\\s*out of\\s*5)\\b",
+      "poison": "The area has a maturity score of 3.",
+      "clean": "The area is rated partial."
+    },
+    {
+      "id": "delivery-status",
+      "why": "No delivery statuses per opportunity, ever; only enabling gaps carry a Status",
+      "pattern": "\\bopportunit\\w*[^.\\n]{0,40}\\b(is|are)\\s+(underway|in progress|delivered|done|complete|on track)\\b",
+      "poison": "This opportunity is underway with the owning team.",
+      "clean": "The choosing session opens by asking the owning teams what is genuinely moving."
+    },
+    {
+      "id": "working-vocab-leak",
+      "why": "Client artefacts never say corpus, register, landscape or data pack",
+      "pattern": "\\b(the corpus|the register|the landscape|data pack)\\b",
+      "poison": "The register records 31 widgets.",
+      "clean": "The workbook records the opportunities.",
+      "severity": "WARN",
+      "limit": 0
+    },
+    {
+      "id": "first-person",
+      "why": "First person is rare in house content",
+      "pattern": "\\b(we|our|us)\\b",
+      "poison": "We think we should look at our options with us involved. We think we should look at our options with us involved. We think we should look at our options with us involved.",
+      "clean": "The company should review the options.",
+      "severity": "WARN",
+      "limit": 8
+    },
+    {
+      "id": "bold-runs",
+      "why": "Bold marks the one sentence that carries the argument",
+      "pattern": "\\*\\*[^*\\n]+\\*\\*",
+      "poison": "**a** **b** **c** **d** **e** **f** **g** **h** **i** **j** **k** **l** **m** **n** **o** **p**",
+      "clean": "**One bolded claim.** The rest is plain.",
+      "severity": "WARN",
+      "limit": 15
+    },
+    {
+      "id": "long-quotation",
+      "why": "Paraphrase rather than quote. Target is zero quotations.",
+      "pattern": "\"(?:[^\"\\n]|\\n(?!\\s*\\n)){45,}\"",
+      "poison": "The director said \"we want to shorten the queue at the depot and keep every delivery slot\non time through the whole of the winter season\".",
+      "clean": "The director is focused on the depot queue.\n\nA second paragraph \"short\" one.",
+      "severity": "WARN",
+      "limit": 0
+    }
+  ],
+  "names": [],
+  "guarded_pairs": [],
+  "budgets": {
+    "sentence_mean_max": 22.0,
+    "sentence_hard_max": 40,
+    "hinge_colon_pct_max": 10,
+    "semicolon_pct_max": 10,
+    "repeated_opener_max": 2
+  },
+  "directives": [
+    "!box",
+    "!/box",
+    "!quote",
+    "!metric",
+    "!table-rag",
+    "!table-findings",
+    "!table-metrics",
+    "!references",
+    "!/references",
+    "!aboutus",
+    "pagebreak"
+  ],
+  "figure_freebies": {
+    "max_small": 3,
+    "year_min": 2000,
+    "year_max": 2100
+  },
+  "observation_checks": {
+    "consultant_labels": [],
+    "client_labels": []
+  }
+}

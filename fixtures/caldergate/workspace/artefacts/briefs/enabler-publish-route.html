@@ -1,0 +1,88 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A review-and-publish route</title>
+<style>
+:root{
+  --ink:#20262B;
+  --accent:#2F4B6E;
+  --line:#D9DDE0;
+  --muted:#9AA3AB;
+  --link:#1D4ED8;
+  --paper:#FFFFFF;
+  --font-head:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ink);background:var(--paper);max-width:900px;margin:0 auto;padding:3rem 2rem 4rem}
+h1,h2,h3{font-family:var(--font-head);color:var(--ink)}
+h1{font-weight:800;font-size:2rem;margin:0 0 .5rem}
+h2{font-weight:700;font-size:1.25rem;margin:1.8rem 0 .5rem}
+h3{font-weight:700;font-size:1rem;margin:1rem 0 .3rem}
+a{color:var(--link)}
+.lede{margin:0 0 1.6rem;max-width:72ch}
+.coverage{border:1px solid var(--line);border-radius:10px;padding:.8rem 1.1rem;margin:1.2rem 0;font-size:.92rem}
+.bn-why{border-left:3px solid var(--accent);padding:.6rem 1.1rem;margin:1.4rem 0}
+.bn-why p{margin:.5rem 0;font-size:.95rem}
+.chips{margin:.25rem 0;display:flex;flex-wrap:wrap;gap:.3rem}
+.chip{display:inline-block;padding:.12rem .55rem;border-radius:999px;font-size:.78rem;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.chip-soft{color:var(--muted);font-style:italic}
+.grade-high{background:var(--accent);border-color:var(--accent);color:#FFFFFF;font-weight:700}
+.grade-medium{border-color:var(--muted);font-weight:700}
+.grade-low{border-color:var(--line);font-weight:700}
+.skills{width:100%;border-collapse:collapse;margin:.8rem 0}
+.skills th,.skills td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top;font-size:.9rem}
+.skills th{font-family:var(--font-head);font-size:.82rem}
+.skills .chip{white-space:nowrap}
+.chip-absent{border-color:var(--accent);background:var(--paper)}
+.chip-have{background:var(--ink);border-color:var(--ink);color:#FFFFFF}
+.chip-committed{border-color:var(--line);background:var(--paper)}
+.note{color:var(--muted);font-size:.85rem;margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1rem}
+@media print{
+@page{size:A4;margin:1.4cm}
+body{padding:0}
+}
+</style></head><body>
+  <h1>A review-and-publish route from a staff-built tool to shared use</h1>
+  <p class="lede">People are already building things that work; what is missing is any route from one person's machine to something the company can rely on, so the best builds strand where they were made.</p>
+
+  <div class="coverage"><strong>Enabler: Control and accountability &middot; Status: Gap &middot; Opportunities waiting: 2 &middot; Owner: to be named &middot; Wave: 1</strong></div>
+
+  <h2>Skills this needs</h2>
+  <p>Skills are derivable from the work. Days are not, without knowing scope and who is doing it, so no estimate is given: putting a number against work nobody has been asked to do would imply a decision that has not been made.</p>
+  <p>The review judgement already exists: the IT manager's approval decisions are sane and trusted, which is why the estate has stayed clean at low volume. What does not exist is an hour a week in which to run a route, which is the capacity gap wearing different clothes.</p>
+  <table class="skills">
+    <tr><th>Skill</th><th>Rating</th><th>Note</th></tr>
+    <tr><td>Review judgement</td><td><span class="chip chip-committed">have it, committed elsewhere</span></td><td>The IT manager already makes sound approval calls; every hour is committed and nothing is recorded.</td></tr>
+    <tr><td>Packaging and versioning</td><td><span class="chip chip-committed">have it, committed elsewhere</span></td><td>The IT engineer can carry this; it competes with the estate work.</td></tr>
+    <tr><td>Authoring guidance</td><td><span class="chip chip-absent">absent</span></td><td>Nothing tells a builder what a publishable tool looks like, which is why the best builder stopped, unsure he was allowed.</td></tr>
+  </table>
+
+  <h2>What is missing, and why</h2>
+  <div class="bn-why">
+    <p>The strongest prototype in the company, a booking-entry tool that extracts TMS fields from forwarded email chains, works on clean emails and sits on one machine. Its builder stopped developing it for two stated reasons: nowhere to put it where others could use it, and uncertainty about whether he was allowed.</p>
+    <p>The same absence killed the FAQ assistant by a different route: it went from working to abandoned with no review step in between that might have caught the staleness risk before a customer did.</p>
+    <p>A route with review in front of it is what turns one person's win into company capability, and it raises the return on every other item in this report: whatever gets built next for quoting, status answers or document checks reaches everyone through it, or reaches nobody.</p>
+  </div>
+
+  <h2>What it releases</h2>
+  <p>These opportunities cannot start, or cannot finish, until this enabling gap is closed.</p>
+  <ul>
+    <li>Booking entry from forwarded email to confirmed TMS fields <span class="chip grade-high">high impact</span></li>
+    <li>The booking-entry prototype published through a governed route <span class="chip grade-medium">medium impact</span></li>
+  </ul>
+
+  <h2>Routes</h2>
+  <p>Options, not a recommendation. Each states what it assumes, because the assumption is usually the thing to test first.</p>
+
+  <h3>A shared folder, a one-page rulebook and a review checklist</h3>
+  <div class="chips"><span class="chip grade-high">impact: high</span><span class="chip">effort: low</span></div>
+  <p>The smallest real route: published tools live in one shared place, a one-page rulebook tells authors what publishable means, and the IT manager's existing judgement is written down as the review checklist, with evaluation evidence required at submission.</p>
+  <p><strong>What it assumes.</strong> One protected hour a week for review. That is the protected-time gap, and this route makes the cost of not granting it concrete.</p>
+
+  <h3>Versioned publication with a named owner per tool</h3>
+  <div class="chips"><span class="chip grade-medium">impact: medium</span><span class="chip">effort: medium</span></div>
+  <p>The fuller shape: a change reaches users only through a version increase, every published tool has a named owner, and the record of what was reviewed protects the business later. The natural second step once the simple route has volume.</p>
+  <p><strong>What it assumes.</strong> Enough publication volume to justify the ceremony. Premature at 1 tool; right at 10.</p>
+
+  <p class="note">From the Caldergate Freight AI Business Enablement report, September 2027. People appear by role rather than by name.</p>
+</body></html>

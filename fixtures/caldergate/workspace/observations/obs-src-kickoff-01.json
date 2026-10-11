@@ -1,0 +1,50 @@
+{
+  "source": "2027-09-20_kickoff-sponsor.md",
+  "sub_type": "discovery interview",
+  "observations": [
+    {
+      "id": "OB-K01",
+      "claim": "Findability is the complaint the managing director hears most; the file layer was migrated 18 months ago without reorganisation.",
+      "quote": "We moved everything into Filestead eighteen months ago and it's a skip, not a filing cabinet.",
+      "locator": "2027-09-20_kickoff-sponsor.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-K02",
+      "claim": "The same figures are keyed into multiple systems as a quote becomes a booking becomes an invoice.",
+      "quote": "A quote becomes a booking becomes an invoice and I'm fairly sure the same numbers get keyed into three systems on the way.",
+      "locator": "2027-09-20_kickoff-sponsor.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-K03",
+      "claim": "AI assistant spend is visible and rising; usage cannot be attributed to people, teams or outcomes.",
+      "quote": "The bill turns up, it's gone up again, and nobody can tell me whose usage that is or what it saved.",
+      "locator": "2027-09-20_kickoff-sponsor.md, S2",
+      "confidence": "medium",
+      "scale": {"load": "roughly 60 assistant seats (\"must be sixty-odd seats now\")"}
+    },
+    {
+      "id": "OB-K04",
+      "claim": "The weekly margin pack is hand-built and errors in it surface mid-week while pricing decisions rest on it.",
+      "quote": "by Wednesday I find out a number in it was wrong",
+      "locator": "2027-09-20_kickoff-sponsor.md, S2",
+      "confidence": "medium",
+      "stated_dependencies": "But I'm making pricing calls on it."
+    },
+    {
+      "id": "OB-K05",
+      "claim": "A CRM migration is in flight (pipeline half moved off spreadsheets); a TMS upgrade is discussed but unscheduled.",
+      "quote": "We're moving the sales pipeline off spreadsheets into Tallybook, that's half done.",
+      "locator": "2027-09-20_kickoff-sponsor.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-K06",
+      "claim": "The sponsor's estimate of quote effort is about 20 minutes (second-hand about the sales desk; contradicted by the sales lead's own account).",
+      "quote": "Sales will tell you a quote takes about 20 minutes.",
+      "locator": "2027-09-20_kickoff-sponsor.md, S2",
+      "confidence": "low"
+    }
+  ]
+}

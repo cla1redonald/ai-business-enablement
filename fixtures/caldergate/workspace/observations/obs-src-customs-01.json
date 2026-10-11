@@ -1,0 +1,43 @@
+{
+  "source": "2027-09-29_customs-working-session.md",
+  "sub_type": "consultant-led session",
+  "observations": [
+    {
+      "id": "OB-X01",
+      "claim": "Declarations run at about 40 a week, 25 minutes for a straightforward one, typed into the customs platform from the customer's documents (self reported).",
+      "quote": "Twenty-five minutes for a straightforward one, and we do about 40 a week.",
+      "locator": "2027-09-29_customs-working-session.md, S2",
+      "confidence": "low",
+      "scale": {"cadence": "about 40 declarations per week"}
+    },
+    {
+      "id": "OB-X02",
+      "claim": "About 1 declaration in 5 bounces on customer paperwork mismatches, costing about 15 minutes of rework plus a wait of up to a day (self reported).",
+      "quote": "About 1 in 5 declarations bounces because something on the customer's invoice doesn't add up",
+      "locator": "2027-09-29_customs-working-session.md, S2",
+      "confidence": "low"
+    },
+    {
+      "id": "OB-X03",
+      "claim": "The failing checks are mechanical (totals match, origin stated, description recognisable) and could run when documents land at the booking desk.",
+      "quote": "The checks are mechanical, does the total match, is the origin stated, is the description one of the ones we've seen before.",
+      "locator": "2027-09-29_customs-working-session.md, S2",
+      "confidence": "medium",
+      "stated_dependencies": "If the booking desk had a checklist run against the documents when they land, I'd get clean files."
+    },
+    {
+      "id": "OB-X04",
+      "claim": "A bounced declaration usually lands while the consignment is already moving, turning it into an emergency.",
+      "quote": "when a declaration bounces, the consignment is usually already rolling",
+      "locator": "2027-09-29_customs-working-session.md, S3",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-X05",
+      "claim": "A live in-session demo of the mechanical checks caught a weight mismatch; the clerk's condition for trusting it is that it is right every time, because a wrong all-clear is worse than no check (consultant-led session; the demo is the consultant's work, the condition is the clerk's evidence).",
+      "quote": "A wrong all-clear is worse than no check.",
+      "locator": "2027-09-29_customs-working-session.md, S2",
+      "confidence": "medium"
+    }
+  ]
+}

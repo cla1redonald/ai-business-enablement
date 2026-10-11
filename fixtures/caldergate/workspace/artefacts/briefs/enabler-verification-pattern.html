@@ -1,0 +1,96 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A shared verification pattern</title>
+<style>
+:root{
+  --ink:#20262B;
+  --accent:#2F4B6E;
+  --line:#D9DDE0;
+  --muted:#9AA3AB;
+  --link:#1D4ED8;
+  --paper:#FFFFFF;
+  --font-head:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ink);background:var(--paper);max-width:900px;margin:0 auto;padding:3rem 2rem 4rem}
+h1,h2,h3{font-family:var(--font-head);color:var(--ink)}
+h1{font-weight:800;font-size:2rem;margin:0 0 .5rem}
+h2{font-weight:700;font-size:1.25rem;margin:1.8rem 0 .5rem}
+h3{font-weight:700;font-size:1rem;margin:1rem 0 .3rem}
+a{color:var(--link)}
+.lede{margin:0 0 1.6rem;max-width:72ch}
+.coverage{border:1px solid var(--line);border-radius:10px;padding:.8rem 1.1rem;margin:1.2rem 0;font-size:.92rem}
+.bn-why{border-left:3px solid var(--accent);padding:.6rem 1.1rem;margin:1.4rem 0}
+.bn-why p{margin:.5rem 0;font-size:.95rem}
+.chips{margin:.25rem 0;display:flex;flex-wrap:wrap;gap:.3rem}
+.chip{display:inline-block;padding:.12rem .55rem;border-radius:999px;font-size:.78rem;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.chip-soft{color:var(--muted);font-style:italic}
+.grade-high{background:var(--accent);border-color:var(--accent);color:#FFFFFF;font-weight:700}
+.grade-medium{border-color:var(--muted);font-weight:700}
+.grade-low{border-color:var(--line);font-weight:700}
+.skills{width:100%;border-collapse:collapse;margin:.8rem 0}
+.skills th,.skills td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top;font-size:.9rem}
+.skills th{font-family:var(--font-head);font-size:.82rem}
+.skills .chip{white-space:nowrap}
+.chip-absent{border-color:var(--accent);background:var(--paper)}
+.chip-have{background:var(--ink);border-color:var(--ink);color:#FFFFFF}
+.chip-committed{border-color:var(--line);background:var(--paper)}
+.note{color:var(--muted);font-size:.85rem;margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1rem}
+@media print{
+@page{size:A4;margin:1.4cm}
+body{padding:0}
+}
+</style></head><body>
+  <h1>A shared verification pattern, so answers can be shown right before reliance</h1>
+  <p class="lede">The usage note already requires competent review before anything is relied on; what is missing is any shared way of doing that check, so each build stands or falls on its own luck.</p>
+
+  <div class="coverage"><strong>Enabler: Control and accountability &middot; Status: Gap &middot; Opportunities waiting: 5 &middot; Owner: to be named &middot; Wave: 1</strong></div>
+
+  <h2>Skills this needs</h2>
+  <p>Skills are derivable from the work. Days are not, without knowing scope and who is doing it, so no estimate is given: putting a number against work nobody has been asked to do would imply a decision that has not been made.</p>
+  <p>This is not a hiring problem. The people who know what a correct answer looks like are already in the business (the customs clerk, the customer service lead, the sales desk), and the scripting capability exists in a 2-person IT function whose every hour is already committed. That is a scheduling decision, not a capability gap, and it is why protected learning time is itself one of these enabling gaps.</p>
+  <table class="skills">
+    <tr><th>Skill</th><th>Rating</th><th>Note</th></tr>
+    <tr><td>Review authority</td><td><span class="chip chip-have">have it</span></td><td>The clerk, the CS lead and the sales lead each stated their own bar for trusting an answer, unprompted. Deciding what correct looks like is already distributed where it should be.</td></tr>
+    <tr><td>Scripting for a harness</td><td><span class="chip chip-committed">have it, committed elsewhere</span></td><td>The IT engineer and the operations analyst both script; both are fully committed to the estate and the rates pull.</td></tr>
+    <tr><td>Evaluation design</td><td><span class="chip chip-absent">absent</span></td><td>Nobody has yet written cases and expected answers for a tool and run them before relying on it. This is learnable in one worked example.</td></tr>
+  </table>
+
+  <h2>What is missing, and why</h2>
+  <div class="bn-why">
+    <p>The interim usage note requires anything the assistant produces to be checked by someone competent before it is relied on. Nothing implements that requirement and nothing records that it happened.</p>
+    <p>The cost is already real. The customer service FAQ assistant answered the most-asked question well until it gave one customer a stale cut-off, confidently, and a shipment missed its sailing. Nothing could have shown the answer was wrong before it went out, and that, in the team's own reading, is what killed the tool rather than the mistake itself.</p>
+    <p>The people closest to the work name the requirement better than the note does. The customs clerk, offered a working demonstration of mechanical document checks, set the bar as right every time, because a wrong all-clear is worse than no check. The sales lead keeps AI away from rates entirely until it can read only the actual rate cards. Both are asking for the same thing: a way to show an answer is right before anyone leans on it.</p>
+  </div>
+
+  <h2>What it releases</h2>
+  <p>These opportunities cannot start, or cannot finish, until this enabling gap is closed.</p>
+  <ul>
+    <li>Quote assembly assisted from the rate cards, scoped read-only <span class="chip grade-high">high impact</span></li>
+    <li>Cut-off answers, verified and current <span class="chip grade-high">high impact</span></li>
+    <li>Status queries answered from the systems <span class="chip grade-high">high impact</span></li>
+    <li>Customs document pre-check at the booking desk <span class="chip grade-high">high impact</span></li>
+    <li>Tender fill assistance <span class="chip grade-medium">medium impact</span></li>
+  </ul>
+
+  <h2>Routes</h2>
+  <p>Options, not a recommendation. Each states what it assumes, because the assumption is usually the thing to test first.</p>
+
+  <h3>Enforce the review clause at the point of publication</h3>
+  <div class="chips"><span class="chip grade-high">impact: high</span><span class="chip">effort: low</span></div>
+  <p>The usage note already requires competent review before reliance. Asking for evaluation evidence whenever a tool is shared through the new publish route makes the requirement bite at the one moment somebody is already looking.</p>
+  <p><strong>What it assumes.</strong> Nothing assumed. This is enforcement of an existing rule, and it only works alongside the publish route (its own brief).</p>
+
+  <h3>Build the first harness on the cut-off answers</h3>
+  <div class="chips"><span class="chip grade-high">impact: high</span><span class="chip">effort: low</span></div>
+  <p>The failed FAQ assistant is the best possible first case: the correct answers are knowable, the failure mode is known (staleness), and the team has said plainly it would use a verified version tomorrow. Twenty to fifty realistic cases with expected answers, agreed with the CS lead, run before anything reaches a customer.</p>
+  <p><strong>What it assumes.</strong> That operations keeps the cut-off source current, which is a findability and ownership question as much as a tooling one. Test that assumption first; the harness will otherwise verify against a stale truth.</p>
+
+  <h3>Build verification into the tools rather than the process</h3>
+  <div class="chips"><span class="chip grade-high">impact: high</span><span class="chip">effort: medium</span></div>
+  <p>A tool that carries its own checks is enforceable in a way a policy clause is not. It travels with the tool, runs every time, and does not depend on anyone remembering.</p>
+  <p><strong>What it assumes.</strong> This is the durable answer, and the slowest. The two routes above buy time for it.</p>
+
+  <p class="note">From the Caldergate Freight AI Business Enablement report, September 2027. People appear by role rather than by name.</p>
+</body></html>

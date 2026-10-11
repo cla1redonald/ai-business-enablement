@@ -1,0 +1,20 @@
+{
+  "source": "doc_ai-usage-note.md",
+  "sub_type": "document",
+  "observations": [
+    {
+      "id": "OB-D01",
+      "claim": "An interim AI usage note exists: it bans customer commercial data, personal data and carrier rates from the assistant, and requires competent review before reliance; it covers the assistant only, names no owner, and routes queries to IT by default.",
+      "quote": "Anything Verrin produces must be checked by someone competent to judge it before it is sent outside the company or relied on for a decision.",
+      "locator": "doc_ai-usage-note.md, item 3",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-D02",
+      "claim": "The note's coverage boundary is explicit: embedded AI in other tools is not covered.",
+      "quote": "Other tools' built-in AI features are not covered.",
+      "locator": "doc_ai-usage-note.md, closing note",
+      "confidence": "medium"
+    }
+  ]
+}

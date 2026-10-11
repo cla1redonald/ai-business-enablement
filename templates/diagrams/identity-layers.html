@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- TEMPLATE: the three identity layers, which fail independently. Layer framing is kit text; the position lines and status chips are the client's. --><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#20262B;--accent:#2F4B6E;--grey:#7A848D;--pale:#E4E7EA;--paper:#FAFAF8}
+*{box-sizing:border-box;margin:0}
+body{width:1400px;height:530px;font-family:'DM Sans',sans-serif;background:#fff;color:var(--ink);padding:44px 70px}
+.eb{font-size:15px;font-weight:700;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+h1{font-size:34px;font-weight:700;margin-top:8px}
+.layers{margin-top:6px;display:flex;flex-direction:column;gap:16px;width:1260px}
+.layer{border-radius:14px;padding:20px 26px;display:flex;gap:22px;align-items:flex-start}
+.l1{background:var(--ink);color:#fff}
+.l2{background:var(--paper);border:1px solid var(--pale)}
+.l3{background:#fff;border:2px solid var(--accent)}
+.num{font-size:15px;font-weight:700;letter-spacing:.08em;opacity:.75;width:80px;flex-shrink:0;text-transform:uppercase;padding-top:2px}
+.layer h2{font-size:20px;font-weight:700}
+.layer p{font-size:14px;line-height:1.42;margin-top:5px}
+.l1 p{color:#D5DADF}.l2 p,.l3 p{color:var(--grey)}
+.today{font-size:12.5px;font-weight:700;margin-top:8px;letter-spacing:.02em}
+.l1 .today{color:#fff}.l2 .today{color:var(--ink)}.l3 .today{color:var(--accent)}
+.chip{margin-left:auto;flex-shrink:0;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.c1{background:#fff;color:var(--ink)}
+.c2{background:var(--pale);color:var(--ink)}
+.c3{background:var(--accent);color:#fff}
+</style></head><body>
+<div class="layers">
+<div class="layer l1"><div class="num">Layer 1</div><div><h2>Who can sign in</h2><p>{How sign-in works today: provider, seat management, how a leaver is blocked.}</p><div class="today">Today: {position, with the scale it is workable at}.</div></div><div class="chip c1">{status chip}</div></div>
+<div class="layer l2"><div class="num">Layer 2</div><div><h2>What a signed-in person's AI can reach</h2><p>Connectors inherit each person's permissions, so the AI layer is exactly as trustworthy as the permission model in each connected system. {What sets those permissions across the connected systems here.}</p><div class="today">Today: {position, and what waits on the permission work}.</div></div><div class="chip c2">{status chip}</div></div>
+<div class="layer l3"><div class="num">Layer 3</div><div><h2>What runs when nobody is signed in</h2><p>Agents need identities of their own: service accounts, scoped permissions and an approved place to run.</p><div class="today">Today: {position: standing agents or none, and what runs as its author}. Design for this inside the identity work.</div></div><div class="chip c3">{status chip}</div></div>
+</div>
+</body></html>

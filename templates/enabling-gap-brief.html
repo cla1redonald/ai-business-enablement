@@ -1,0 +1,108 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{Enabling gap name}</title>
+<!--
+TEMPLATE: enabling-gap brief (one page per gap, plus an index.html)
+The artefact that turns a root cause into a decision. The content model per gap:
+what the gap is, what waits on it (with counts), what closing it looks like (routes),
+which wave it lands in, and who should own it. Rules:
+- Decision-before-build framing: routes are options, not a recommendation, and each
+  states what it assumes, because the assumption is usually the thing to test first.
+  Options are often buy, configure or decide; a missing owner is itself the finding.
+- Skills are derivable from the work; day estimates are not, without scope and a named
+  doer, so give none: a number against work nobody has been asked to do implies a
+  decision that has not been made.
+- Skill ratings have three answers, not two: have it / absent / have it, committed
+  elsewhere. "Committed elsewhere" is a scheduling decision, not a capability gap, and
+  is usually the dominant answer.
+- Roles, never names. Every figure from the facts manifest.
+Skin: change the palette variables below; nothing else is branded.
+-->
+<style>
+:root{
+  --ink:#20262B;
+  --accent:#2F4B6E;
+  --line:#D9DDE0;
+  --muted:#9AA3AB;
+  --link:#1D4ED8;
+  --paper:#FFFFFF;
+  --font-head:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ink);background:var(--paper);max-width:900px;margin:0 auto;padding:3rem 2rem 4rem}
+h1,h2,h3{font-family:var(--font-head);color:var(--ink)}
+h1{font-weight:800;font-size:2rem;margin:0 0 .5rem}
+h2{font-weight:700;font-size:1.25rem;margin:1.8rem 0 .5rem}
+h3{font-weight:700;font-size:1rem;margin:1rem 0 .3rem}
+a{color:var(--link)}
+.lede{margin:0 0 1.6rem;max-width:72ch}
+.coverage{border:1px solid var(--line);border-radius:10px;padding:.8rem 1.1rem;margin:1.2rem 0;font-size:.92rem}
+.bn-why{border-left:3px solid var(--accent);padding:.6rem 1.1rem;margin:1.4rem 0}
+.bn-why p{margin:.5rem 0;font-size:.95rem}
+.chips{margin:.25rem 0;display:flex;flex-wrap:wrap;gap:.3rem}
+.chip{display:inline-block;padding:.12rem .55rem;border-radius:999px;font-size:.78rem;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.chip-soft{color:var(--muted);font-style:italic}
+.grade-high{background:var(--accent);border-color:var(--accent);color:#FFFFFF;font-weight:700}
+.grade-medium{border-color:var(--muted);font-weight:700}
+.grade-low{border-color:var(--line);font-weight:700}
+.skills{width:100%;border-collapse:collapse;margin:.8rem 0}
+.skills th,.skills td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top;font-size:.9rem}
+.skills th{font-family:var(--font-head);font-size:.82rem}
+.skills .chip{white-space:nowrap}
+.chip-absent{border-color:var(--accent);background:var(--paper)}
+.chip-have{background:var(--ink);border-color:var(--ink);color:#FFFFFF}
+.chip-committed{border-color:var(--line);background:var(--paper)}
+.note{color:var(--muted);font-size:.85rem;margin-top:2.6rem;border-top:1px solid var(--line);padding-top:1rem}
+@media print{
+@page{size:A4;margin:1.4cm}
+body{padding:0}
+}
+</style></head><body>
+  <h1>{Enabling gap name, stated as the capability wanted}</h1>
+  <p class="lede">{One sentence: what already exists or is required, and what is missing.}</p>
+
+  <div class="coverage"><strong>Enabler: {enabler} &middot; Status: {In place / Partial / Gap} &middot; Opportunities waiting: {n} &middot; Owner: {role, or "to be named"} &middot; Wave: {1 / 2 / 3}</strong></div>
+
+  <h2>Skills this needs</h2>
+  <p>Skills are derivable from the work. Days are not, without knowing scope and who is doing it, so no estimate is given: putting a number against work nobody has been asked to do would imply a decision that has not been made.</p>
+  <p>{The capacity framing paragraph: whether this is a hiring problem, a capability
+  problem or a scheduling one, argued from the discovery evidence.}</p>
+  <table class="skills">
+    <tr><th>Skill</th><th>Rating</th><th>Note</th></tr>
+    <tr><td>{skill}</td><td><span class="chip chip-have">have it</span></td><td>{evidence the capability exists}</td></tr>
+    <tr><td>{skill}</td><td><span class="chip chip-committed">have it, committed elsewhere</span></td><td>{where it is committed}</td></tr>
+    <tr><td>{skill}</td><td><span class="chip chip-absent">absent</span></td><td>{what absence means here}</td></tr>
+  </table>
+
+  <h2>What is missing, and why</h2>
+  <div class="bn-why">
+    <p>{The finding: what the rules or systems already require, and what practice
+    actually does. Evidence first.}</p>
+    <p>{The incident or observation that makes it concrete, de-identified: what the
+    existing control should have prevented and did not, and why that is an
+    instrumentation gap rather than a governance one, if it is.}</p>
+    <p>{The voice of the person closest to it, paraphrased: they usually name the risk
+    better than any policy clause does.}</p>
+  </div>
+
+  <h2>What it releases</h2>
+  <p>These opportunities cannot start, or cannot finish, until this enabling gap is closed.</p>
+  <ul>
+    <li>{opportunity} <span class="chip grade-high">high impact</span></li>
+    <li>{opportunity} <span class="chip grade-medium">medium impact</span></li>
+    <li>{opportunity} <span class="chip grade-low">low impact</span></li>
+  </ul>
+
+  <h2>Routes</h2>
+  <p>Options, not a recommendation. Each states what it assumes, because the assumption is usually the thing to test first.</p>
+
+  <!-- Two to four routes. Order cheapest-to-test first where honesty allows. -->
+  <h3>{Route: imperative sentence}</h3>
+  <div class="chips"><span class="chip grade-high">impact: {high}</span><span class="chip">effort: {low}</span></div>
+  <p>{What the route is, anchored in something that already exists where possible.}</p>
+  <p><strong>What it assumes.</strong> {The assumption, stated plainly. "Nothing
+  assumed. This is enforcement of an existing rule." is a legitimate and strong entry.}</p>
+
+  <p class="note">From the {client token} AI Business Enablement report, {month year}. People appear by role rather than by name; named client organisations by neutral token.</p>
+</body></html>

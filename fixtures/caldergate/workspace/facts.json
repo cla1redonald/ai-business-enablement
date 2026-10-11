@@ -1,0 +1,324 @@
+{
+  "schema_version": "0.1",
+  "client": "Caldergate Freight",
+  "period": "September to October 2027",
+  "evidence_period": "September 2027",
+  "figures": {
+    "n_opportunities": 21,
+    "n_streams": 6,
+    "n_streams_high": 4,
+    "n_streams_medium": 2,
+    "n_gaps": 6,
+    "n_gated": 13,
+    "n_open": 8,
+    "n_memberships": 19,
+    "n_multi_stream": 1,
+    "n_quantified": 7,
+    "n_sources": 9,
+    "n_conversations": 7,
+    "n_documents": 2,
+    "n_observations": 47,
+    "blanks": {
+      "ungraded": 1,
+      "no_function": 1,
+      "no_stream": 3
+    },
+    "readiness_totals": {
+      "in place": 0,
+      "partial": 6,
+      "gap": 14,
+      "blocked": 0
+    }
+  },
+  "quantified_figures": [
+    {
+      "id": "OPP-001",
+      "figure": 15,
+      "unit": "minutes per booking, self reported"
+    },
+    {
+      "id": "OPP-004",
+      "figure": 45,
+      "unit": "minutes per quote, self reported"
+    },
+    {
+      "id": "OPP-005",
+      "figure": 10,
+      "unit": "person-days per major tender, self reported"
+    },
+    {
+      "id": "OPP-006",
+      "figure": 60,
+      "unit": "status queries per day, self reported"
+    },
+    {
+      "id": "OPP-010",
+      "figure": 1,
+      "unit": "day per week, self reported"
+    },
+    {
+      "id": "OPP-012",
+      "figure": 6,
+      "unit": "hours per week, self reported"
+    },
+    {
+      "id": "OPP-014",
+      "figure": 15,
+      "unit": "minutes rework per bounced declaration, self reported"
+    }
+  ],
+  "verified_evidence_figures": [
+    {
+      "figure": 140,
+      "context": "staff headcount, stated at kickoff and by IT"
+    },
+    {
+      "figure": 20,
+      "context": "bookings per day, operations, self reported"
+    },
+    {
+      "figure": 30,
+      "context": "quotes per week (sales, self reported) and the process note's minute target"
+    },
+    {
+      "figure": 45,
+      "context": "minutes per normal quote, sales, self reported"
+    },
+    {
+      "figure": 60,
+      "context": "status queries per day (CS, self reported) and approximate assistant seats"
+    },
+    {
+      "figure": 4,
+      "context": "hours a carrier confirmation can take, operations, self reported"
+    },
+    {
+      "figure": 5,
+      "context": "minutes for a clean status query, CS, self reported"
+    },
+    {
+      "figure": 25,
+      "context": "minutes per straightforward declaration, customs, self reported"
+    },
+    {
+      "figure": 40,
+      "context": "declarations per week, customs, self reported"
+    },
+    {
+      "figure": 15,
+      "context": "minutes per booking entry and per declaration rework, self reported"
+    },
+    {
+      "figure": 6,
+      "context": "hours per week of reconciliation, finance, self reported"
+    },
+    {
+      "figure": 10,
+      "context": "person-days per major tender, sales, self reported"
+    },
+    {
+      "figure": 18,
+      "context": "months since the file-layer migration, sponsor"
+    }
+  ],
+  "tables": {
+    "functions_weighted": [
+      {
+        "function": "Operations",
+        "weighted": 5.0
+      },
+      {
+        "function": "IT",
+        "weighted": 4.5
+      },
+      {
+        "function": "Customer Service",
+        "weighted": 3.5
+      },
+      {
+        "function": "Finance",
+        "weighted": 3.5
+      },
+      {
+        "function": "Sales",
+        "weighted": 3.0
+      },
+      {
+        "function": "Customs",
+        "weighted": 0.5
+      }
+    ],
+    "streams": [
+      {
+        "id": "VS-01",
+        "name": "Quote request to booked shipment",
+        "impact": "High",
+        "member_count": 5,
+        "source_count": 4,
+        "gap_count": 3,
+        "gap_ids": [
+          "GAP-03",
+          "GAP-04",
+          "GAP-05"
+        ]
+      },
+      {
+        "id": "VS-02",
+        "name": "Booking to delivered consignment and clean invoice",
+        "impact": "High",
+        "member_count": 4,
+        "source_count": 4,
+        "gap_count": 3,
+        "gap_ids": [
+          "GAP-01",
+          "GAP-02",
+          "GAP-04"
+        ]
+      },
+      {
+        "id": "VS-03",
+        "name": "Customer status query to answered customer",
+        "impact": "High",
+        "member_count": 4,
+        "source_count": 2,
+        "gap_count": 3,
+        "gap_ids": [
+          "GAP-01",
+          "GAP-02",
+          "GAP-04"
+        ]
+      },
+      {
+        "id": "VS-04",
+        "name": "Scattered exports to trusted weekly reporting",
+        "impact": "High",
+        "member_count": 3,
+        "source_count": 2,
+        "gap_count": 1,
+        "gap_ids": [
+          "GAP-01"
+        ]
+      },
+      {
+        "id": "VS-05",
+        "name": "Ad-hoc AI experiment to shared, trusted capability",
+        "impact": "Medium",
+        "member_count": 2,
+        "source_count": 5,
+        "gap_count": 1,
+        "gap_ids": [
+          "GAP-03"
+        ]
+      },
+      {
+        "id": "VS-06",
+        "name": "Tender received to submitted RFQ response",
+        "impact": "Medium",
+        "member_count": 1,
+        "source_count": 1,
+        "gap_count": 1,
+        "gap_ids": [
+          "GAP-04"
+        ]
+      }
+    ],
+    "gaps_waiting": [
+      {
+        "id": "GAP-01",
+        "name": "A governed, queryable home for operating data, reachable by approved AI",
+        "enabler": "Trusted information",
+        "status": "Gap",
+        "waiting": 4
+      },
+      {
+        "id": "GAP-02",
+        "name": "The TMS reachable read-only by the assistant, with permissions scoped per connection",
+        "enabler": "Trusted information",
+        "status": "Gap",
+        "waiting": 2
+      },
+      {
+        "id": "GAP-03",
+        "name": "A review-and-publish route from a staff-built tool to shared use",
+        "enabler": "Control and accountability",
+        "status": "Gap",
+        "waiting": 2
+      },
+      {
+        "id": "GAP-04",
+        "name": "A shared verification pattern so an assistant's answers can be shown right before reliance",
+        "enabler": "Control and accountability",
+        "status": "Gap",
+        "waiting": 5
+      },
+      {
+        "id": "GAP-05",
+        "name": "Service identity and an approved runtime for unattended automations",
+        "enabler": "Hosting and identity",
+        "status": "Gap",
+        "waiting": 1
+      },
+      {
+        "id": "GAP-06",
+        "name": "Protected learning time for the two-person IT team",
+        "enabler": "Adoption and capacity",
+        "status": "Gap",
+        "waiting": 0
+      }
+    ],
+    "readiness_rollup": [
+      {
+        "enabler": "Trusted information",
+        "in_place": 0,
+        "partial": 2,
+        "gap": 2,
+        "blocked": 0
+      },
+      {
+        "enabler": "Hosting and identity",
+        "in_place": 0,
+        "partial": 1,
+        "gap": 3,
+        "blocked": 0
+      },
+      {
+        "enabler": "Control and accountability",
+        "in_place": 0,
+        "partial": 2,
+        "gap": 2,
+        "blocked": 0
+      },
+      {
+        "enabler": "Proof",
+        "in_place": 0,
+        "partial": 0,
+        "gap": 4,
+        "blocked": 0
+      },
+      {
+        "enabler": "Adoption and capacity",
+        "in_place": 0,
+        "partial": 1,
+        "gap": 3,
+        "blocked": 0
+      }
+    ],
+    "observations_per_source": {
+      "2027-09-24_customer-service.md": 6,
+      "2027-09-29_customs-working-session.md": 5,
+      "doc_ai-usage-note.md": 2,
+      "doc_quote-process.md": 2,
+      "2027-09-23_finance.md": 7,
+      "2027-09-28_it.md": 6,
+      "2027-09-20_kickoff-sponsor.md": 6,
+      "2027-09-22_ops-team.md": 8,
+      "2027-09-27_sales.md": 5
+    }
+  },
+  "provenance": {
+    "figures": "derived from data/landscape.json, data/readiness.json and observations/*.json by tools/facts.py; nothing typed",
+    "weighting": "functions_weighted is share-weighted: an opportunity split across n functions counts 1/n to each",
+    "counting": "n_memberships sums stream memberships and exceeds n_opportunities when opportunities sit on more than one stream; gaps_waiting sums past n_gated when opportunities wait on more than one gap",
+    "verified_evidence_figures": "figures quoted from sources, confirmed by the consultant against the cited source; carried from engagement.json, each with its context"
+  }
+}

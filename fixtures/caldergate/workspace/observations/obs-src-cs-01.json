@@ -1,0 +1,50 @@
+{
+  "source": "2027-09-24_customer-service.md",
+  "sub_type": "discovery interview",
+  "observations": [
+    {
+      "id": "OB-C01",
+      "claim": "The team answers about 60 status queries a day, each needing the TMS, the carrier portal and usually the email thread (self reported).",
+      "quote": "We take about 60 status queries a day across the team.",
+      "locator": "2027-09-24_customer-service.md, S3",
+      "confidence": "low",
+      "scale": {"cadence": "about 60 per day across the team"}
+    },
+    {
+      "id": "OB-C02",
+      "claim": "A clean status query takes about 5 minutes; one with a problem takes 20 to 30 (self reported).",
+      "quote": "A clean one, five minutes.",
+      "locator": "2027-09-24_customer-service.md, S3",
+      "confidence": "low"
+    },
+    {
+      "id": "OB-C03",
+      "claim": "Escalations to operations are retyped at both ends and cannot be tracked once raised.",
+      "quote": "nobody could show you where any given escalation is",
+      "locator": "2027-09-24_customer-service.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-C04",
+      "claim": "The most-asked question is sailing cut-offs, answered from a shared-drive spreadsheet that operations sometimes update late.",
+      "quote": "The answer lives in a spreadsheet on Filestead that operations update, except when they update it late.",
+      "locator": "2027-09-24_customer-service.md, S3",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-C05",
+      "claim": "There is no churn signal of any kind; an account going cold is felt, not measured.",
+      "quote": "There's no number that would tell you an account's gone cold until the volume's already gone.",
+      "locator": "2027-09-24_customer-service.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-C06",
+      "claim": "A FAQ assistant was abandoned after one confidently wrong answer (a stale cut-off) because nothing could show its answers were right before they went out; the demand remains and the team would use a verified one.",
+      "quote": "we had no way of checking it was right before it went out, and that's what killed it",
+      "locator": "2027-09-24_customer-service.md, S2",
+      "confidence": "medium",
+      "stated_dependencies": "If someone could show me it giving right answers reliably, the team would use it tomorrow."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "client_display": "Caldergate Freight",
+  "consultancy": "Fieldnote Advisory",
+  "consultant_role_token": "[CONSULTANT-1]",
+  "period": "September to October 2027",
+  "evidence_period": "September 2027",
+  "names": [
+    "Jordan Vale", "Jordan", "Vale",
+    "Elena Marsh", "Elena", "Marsh",
+    "Aileen Naul", "Aileen", "Naul",
+    "Sam Okafor", "Okafor",
+    "Douglas Wren", "Douglas", "Wren",
+    "Maya Holt", "Maya", "Holt",
+    "Tessa Brant", "Tessa", "Brant",
+    "Rob Quinn", "Quinn",
+    "Morag Baird", "Morag", "Baird",
+    "Marcus Deen", "Marcus", "Deen",
+    "Femi Ade", "Femi"
+  ],
+  "company_tokens": {},
+  "verified_figures": [
+    {"figure": 140, "context": "staff headcount, stated at kickoff and by IT"},
+    {"figure": 20, "context": "bookings per day, operations, self reported"},
+    {"figure": 30, "context": "quotes per week (sales, self reported) and the process note's minute target"},
+    {"figure": 45, "context": "minutes per normal quote, sales, self reported"},
+    {"figure": 60, "context": "status queries per day (CS, self reported) and approximate assistant seats"},
+    {"figure": 4, "context": "hours a carrier confirmation can take, operations, self reported"},
+    {"figure": 5, "context": "minutes for a clean status query, CS, self reported"},
+    {"figure": 25, "context": "minutes per straightforward declaration, customs, self reported"},
+    {"figure": 40, "context": "declarations per week, customs, self reported"},
+    {"figure": 15, "context": "minutes per booking entry and per declaration rework, self reported"},
+    {"figure": 6, "context": "hours per week of reconciliation, finance, self reported"},
+    {"figure": 10, "context": "person-days per major tender, sales, self reported"},
+    {"figure": 18, "context": "months since the file-layer migration, sponsor"}
+  ]
+}

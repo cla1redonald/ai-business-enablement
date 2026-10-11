@@ -1,0 +1,52 @@
+{
+  "source": "2027-09-28_it.md",
+  "sub_type": "discovery interview",
+  "observations": [
+    {
+      "id": "OB-I01",
+      "claim": "IT is 2 people for 140 staff carrying devices, access, the file estate, TMS admin and everything AI; the manager describes himself as living in the backlog.",
+      "quote": "Two of us, me and one engineer, for 140 people.",
+      "locator": "2027-09-28_it.md, S2",
+      "confidence": "medium",
+      "scale": {"held_by": "concentrated on the IT manager and one engineer"}
+    },
+    {
+      "id": "OB-I02",
+      "claim": "Tool and connector approval is an email to the IT manager with no form and no record, and AI-related requests are now arriving about weekly.",
+      "quote": "There's no form, and honestly no record beyond the email thread.",
+      "locator": "2027-09-28_it.md, S2",
+      "confidence": "medium",
+      "scale": {"cadence": "a request a week now"}
+    },
+    {
+      "id": "OB-I03",
+      "claim": "The assistant admin console shows spend only: no per-user or per-team usage, no activity, no connections visible (observed directly, console reviewed together).",
+      "quote": "Usage tab: that's spend, this month, last month. That's it.",
+      "locator": "2027-09-28_it.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-I04",
+      "claim": "AI embedded in other tools arrives via vendor updates without any decision, and no list of AI surfaces exists.",
+      "quote": "None of that went through any decision, it just arrived. There's no list of it anywhere.",
+      "locator": "2027-09-28_it.md, S2",
+      "confidence": "medium"
+    },
+    {
+      "id": "OB-I05",
+      "claim": "The overnight carrier-rates pull runs on an analyst's laptop under his personal logins; it stops when he is away, and a week's absence led to quoting on a stale fuel surcharge.",
+      "quote": "the week he had it off sick, sales quoted Tuesday on Friday's fuel surcharge",
+      "locator": "2027-09-28_it.md, S2",
+      "confidence": "medium",
+      "scale": {"held_by": "one analyst, personally"}
+    },
+    {
+      "id": "OB-I06",
+      "claim": "TMS permissions are coarse (everyone operational sees everything), which the IT manager names as the blocker to any assistant reading it, and the two-person team has had no clear time to work the question.",
+      "quote": "basically everyone operational sees everything",
+      "locator": "2027-09-28_it.md, S2",
+      "confidence": "medium",
+      "stated_dependencies": "I'd want that thought through per connection, and right now the thinking time doesn't exist."
+    }
+  ]
+}

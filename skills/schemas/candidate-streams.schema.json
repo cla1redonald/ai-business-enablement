@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://abe-kit.local/schemas/candidate-streams.schema.json",
+  "title": "Candidate Streams",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source_fingerprint", "detector_version", "artefact_digest", "candidates"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "source_fingerprint": { "type": "string", "minLength": 1 },
+    "detector_version": { "type": "string", "minLength": 1 },
+    "artefact_digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "candidates": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/candidate" } }
+  },
+  "$defs": {
+    "confidence": { "enum": ["low", "medium", "high"] },
+    "source_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_file", "source_type", "locator", "confidence"],
+      "properties": {
+        "source_file": { "type": "string", "minLength": 1 },
+        "source_type": { "enum": ["document", "interview", "questionnaire", "system"] },
+        "locator": { "type": "string", "minLength": 1 },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "quote": { "type": "string" },
+        "derivation": { "enum": ["vision_extracted", "pdf_extracted", "docx_extracted", "pptx_extracted", "srt_extracted"] }
+      }
+    },
+    "source_refs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/source_ref" } },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "source_refs"],
+      "properties": {
+        "statement": { "type": "string", "minLength": 1 },
+        "source_refs": { "$ref": "#/$defs/source_refs" }
+      }
+    },
+    "function": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "source_refs"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "source_refs": { "$ref": "#/$defs/source_refs" }
+      }
+    },
+    "overlap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_id", "reason", "source_refs"],
+      "properties": {
+        "candidate_id": { "type": "string", "pattern": "^cs-[a-f0-9]{8,64}$" },
+        "reason": { "type": "string", "minLength": 1 },
+        "source_refs": { "$ref": "#/$defs/source_refs" }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "allOf": [{
+        "if": {
+          "properties": {
+            "recommendation": {
+              "type": "object",
+              "properties": { "mode": { "const": "map" } },
+              "required": ["mode"]
+            }
+          },
+          "required": ["recommendation"]
+        },
+        "then": {
+          "properties": {
+            "start_event": { "$ref": "#/$defs/claim" },
+            "end_event": { "$ref": "#/$defs/claim" }
+          },
+          "required": ["start_event", "end_event"]
+        }
+      }],
+      "required": ["id", "name", "scope", "participating_functions", "confidence", "source_files", "overlaps", "scope_questions", "recommendation"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^cs-[a-f0-9]{8,64}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "scope": { "$ref": "#/$defs/claim" },
+        "start_event": { "$ref": "#/$defs/claim" },
+        "end_event": { "$ref": "#/$defs/claim" },
+        "participating_functions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/function" } },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "source_files": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "overlaps": { "type": "array", "items": { "$ref": "#/$defs/overlap" } },
+        "scope_questions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "recommendation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "reasons"],
+          "properties": {
+            "mode": { "enum": ["map", "split", "landscape"] },
+            "reasons": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+          }
+        }
+      }
+    }
+  }
+}
