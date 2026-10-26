@@ -88,5 +88,5 @@ same source as annex E so the two can never disagree.
 ## Open question (carried from the PRD)
 
 Whether the workbook stays xlsx only or gains a rendered HTML twin. HTML travels
-better; xlsx is what execs open in the session. Decide in Phase B; the spec above is
-format-neutral except the sheet structure.
+better, and xlsx is what execs open in the session. The kit's build plan leaves this
+open for now, and the spec above is format-neutral except the sheet structure.
