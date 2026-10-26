@@ -41,8 +41,8 @@ available in context when the rebuild rated the areas. Reproducing the ratings s
 the instrument and the evidence rules are consistent with the earlier result. It is
 a consistency check, not an independent test of whether the ratings are right.
 
-**One engagement, one corpus.** Nothing here says how the kit performs on a different
-organisation, sector or transcript quality.
+**It is one engagement on one corpus.** Nothing here says how the kit performs on a
+different organisation, sector or transcript quality.
 
 ## Where the checker earned its place
 

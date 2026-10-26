@@ -24,5 +24,5 @@ firm's real assets, and it supplies five things.
    self-test refuses to grade.
 
 As a rule of thumb, if applying a skin means editing anything under `taxonomy/`,
-`method/`, `skills/` or `tools/` (other than a copy of the config), the kit has a leak.
-Fix the kit, not the skin.
+`method/`, `skills/` or `tools/` (other than a copy of the config), the kit has a leak,
+and the fix belongs in the kit.

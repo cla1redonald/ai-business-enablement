@@ -30,8 +30,8 @@ points, in this order.
    date is fine. I'd much rather read your messy real thing than a tidy version made for
    me."
 5. The drop-in trailer. Say the first one is this week, as a lunch and learn. Be open
-   that it has two purposes, since they get quick wins and you learn the landscape and
-   flush out enabling problems. Invite anyone who wants to come.
+   that it has two purposes. They get quick wins, and you learn the landscape and find
+   the enabling problems. Invite anyone who wants to come.
 
 **The per-lead DM**, adapted for each person. Ask them to bring a couple of their team,
 and to send what already exists. That might be how work flows, the tools they pay for,
@@ -43,7 +43,7 @@ what you are listening for, plus a list of themes that cut across teams to test 
 session. Those themes are findability, document creation, shared context versus
 individual tricks, fear about permissions, and measuring output rather than tokens.
 
-## 2. The discovery call (55 minutes)
+## 2. The discovery call (book an hour)
 
 Run it the same way every time. Open with the framing promise, "this is discovery, not
 assessment, and nothing goes back as a scorecard", and ask to record ("purely so I'm
@@ -51,12 +51,13 @@ listening rather than typing").
 
 | Minutes | Move |
 |---|---|
-| 0 to 3 | Open: framing, recording consent |
-| 3 to 12 | "Talk me through a normal week. Not the org chart version, the actual version." Interrupt only to pin a number: how often, how long, how many |
-| 12 to 32 | "Which two things eat the most time?" Work the probe list on each; this is where the value stream map comes from |
-| 32 to 42 | Handoffs and waiting: where does your work stop and someone else's start; what are you waiting on right now; what state does work arrive in |
-| 42 to 50 | What's been tried: working, half-built or abandoned; what made you stop; has anything felt risky or made you unsure whether you were allowed |
-| 50 to 55 | Close: the one thing you would unblock; who else should I talk to (especially the people doing the work daily); anything you can send me afterwards |
+| 0 to 5 | Open with the framing and ask for consent to record |
+| 5 to 15 | "Talk me through a normal week. Not the org chart version, the actual version." Interrupt only to pin a number, such as how often, how long or how many |
+| 15 to 30 | "Which two things eat the most time?" Work through the probe list on each. This is where the value stream map comes from |
+| 30 to 40 | Handoffs and waiting. Where does your work stop and someone else's start? What are you waiting on right now? What state does work arrive in? |
+| 40 to 50 | What has been tried, whether working, half-built or abandoned. What made you stop? Has anything felt risky, or made you unsure whether you were allowed? |
+| 50 to 55 | Close. Ask for the one thing they would unblock, who else you should talk to (especially the people doing the work every day), and anything they can send afterwards |
+| 55 to 60 | Slack. Nothing is planned here, so a call that runs over still ends on time |
 
 **The probe list**, for each heavy process. Ask how often it happens and how long it
 takes each time. Ask where the input comes from and what state it arrives in, and **what
@@ -130,10 +131,10 @@ turned into a skill, then skills chained into a system that runs on its own.
   times. For the skills session the lesson is "fix the system, not the sentence".
 - Make every session stand alone. Start with a five-minute recap, and never say "you
   should have been here last week".
-- The follow-along is the point. It is a 12-minute DO block where everyone builds the
-  thing on their own machine, written for the most limited setup in the room (browser
-  only, no admin rights), with success criteria on the slide. Never cut the hands-on
-  part to save time. Cut a demo instead.
+- The follow-along is the point. It is a DO block of about 15 minutes where everyone
+  builds the thing on their own machine, written for the most limited setup in the room
+  (browser only, no admin rights), with success criteria on the slide. Never cut the
+  hands-on part, and cut elsewhere if time runs short.
 - Put templates on screen and in the channel, and post the recordings and steps
   afterwards, so the goal can be "two or three finished" rather than thirty.
 - Prepare a table of what can go wrong live, such as a locked-down laptop, a missing
@@ -144,8 +145,8 @@ turned into a skill, then skills chained into a system that runs on its own.
   ("can it read our files?", "is it safe to paste our stuff?", "where does this live?").
   Answer honestly without apologising, and send the detailed questions to the enabling
   stream.
-- Present the governance moment together with the client's own IT. The best ninety
-  seconds of a drop-in is IT answering the approval question live.
+- Bring the client's own IT into the governance part of the session. Have IT answer the
+  approval question live, because the room believes it from them.
 - Close every session by following up whatever was promised in the last one. Check the
   product the day before, because button names move, and never present something out of
   date as fact.

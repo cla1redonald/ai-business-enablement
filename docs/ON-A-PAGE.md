@@ -32,8 +32,8 @@ so that it can find its way around the folder.
    Adoption and capacity.
 3. **Bridge.** However many opportunities there are, they come down to a handful of root
    causes, which the five enablers clear. Each enabling gap is sized by the number of
-   opportunities waiting on it. The message for leadership is that appetite for AI is
-   not what holds them back. The groundwork is.
+   opportunities waiting on it. The point for leadership is that the missing groundwork
+   holds them back far more than any lack of appetite.
 4. **Choose.** In one session, leadership works through six questions against its own
    workbook and picks a starting portfolio. The session can be repeated every quarter.
    Two decisions come before it. One names an accountable owner, and the other settles

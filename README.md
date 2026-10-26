@@ -24,13 +24,14 @@ A person confirms the result at every gate. There is no app, no server and no da
 
 I replayed the real engagement through the rebuild, on the same confidential material.
 The rebuild produced 438 observations, and every quote in them was found word for word
-in its source. The earlier pipeline produced 212. The rebuild also matched the 20-area
-readiness ratings, with the earlier grid in context.
+in its source. The earlier pipeline produced 212. The rebuild also reproduced all 20
+readiness ratings.
 
 The two observation counts do not measure recall on equal terms. The rebuild splits
 evidence more finely, and how much of the gap comes from that has not been quantified.
-The readiness replay was not blind. It is also one engagement, and it cannot be
-reproduced here. [docs/results.md](docs/results.md) sets out each caveat in full.
+The readiness replay was not blind, because the earlier ratings were in front of it. It
+is also one engagement, and it cannot be reproduced here.
+[docs/results.md](docs/results.md) sets out each caveat in full.
 
 ## Run the demo in 60 seconds
 
@@ -103,9 +104,9 @@ Every number in a deliverable is derived. `tools/facts.py` builds the manifest o
 figures, and `check.py` flags any figure in a deliverable that it cannot trace back to
 the manifest, so that a person can confirm it.
 
-CI keeps the fixture honest. On every push and pull request, GitHub Actions runs the
-demo on Python 3.12 and compares the regenerated `facts.json` with the committed file,
-so the fixture cannot drift away from what the tools produce.
+GitHub Actions runs the demo on Python 3.12 for every push and pull request, then
+compares the regenerated `facts.json` with the committed file. If the tools and the
+fixture ever disagree, the build fails, so the fixture cannot quietly drift.
 
 ## The method in brief
 

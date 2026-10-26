@@ -12,8 +12,8 @@ scope for v0.1).
 
 ## Who does what
 
-The skills draft, the tools check, and a person makes the decisions. Everything in the
-repo sits on one side of that line or the other.
+Claude drafts from the skills, the Python tools check what it drafts, and a person
+decides. Each part of the repo does one of those three jobs.
 
 | Layer | What it is | Runs on |
 |---|---|---|
@@ -23,12 +23,12 @@ repo sits on one side of that line or the other.
 | Templates (`templates/`) | The report skeleton (markdown with slots and publishing directives), the map and brief HTML, five diagram HTML files, the workbook spec, and the pack README and CLAUDE.md | Filled by skills and tools. The HTML opens in any browser without a server |
 | Fixture (`fixtures/caldergate/`) | One engagement, invented throughout, that exercises every module and is committed with its complete worked run | The regression surface for every change |
 
-Two hard limits are part of the design, and they are not just habits. There are four
-tools and no more, because a tool that needs a tree of subcommands is doing a skill's
-job. A skill must be editable in one sitting, because if changing a prompt means
-changing code, the stage has been split in the wrong place. Both limits exist because
-the earlier pipeline kept growing machinery until it was hard to change. Its computed
-report was eventually replaced wholesale by a hand-written one, and nobody missed it.
+Two hard limits are part of the design. There are four tools and no more, because a tool
+that needs a tree of subcommands is doing a skill's job. A skill must be editable in one
+sitting, because if changing a prompt means changing code, the stage has been split in
+the wrong place. Both limits exist because the earlier pipeline kept growing machinery
+until it was hard to change. Its computed report was eventually replaced wholesale by a
+hand-written one, and nobody missed it.
 
 ## The stage arc
 
@@ -113,12 +113,12 @@ rule has passed both.
 
 Privacy is protected at more than one layer, as decision 0002 sets out. At intake,
 people are replaced by role tokens. The tokens are seeded from each source's
-participants frontmatter and swept through speech and vocatives, and prospect and
-customer companies are always tokenised. At export, everything is audited anyway,
-through the checker's names list and the pack audit. The registry that maps names to
-tokens never leaves the engagement workspace, and tokenisation never matches numbers.
-Live client workspaces never enter this repo. The synthetic fixture is the only
-engagement committed here.
+participants frontmatter, and a name is replaced wherever it is spoken or used to
+address someone. Prospect and customer companies are always tokenised. At export,
+everything is audited anyway, through the checker's names list and the pack audit. The
+registry that maps names to tokens never leaves the engagement workspace, and
+tokenisation never matches numbers. Live client workspaces never enter this repo. The
+synthetic fixture is the only engagement committed here.
 
 ## Branding model
 

@@ -1,7 +1,7 @@
 # The where-to-start kit
 
-This is everything that guides sequencing, gathered into one named bundle. It is the
-half of the scenario that identifies the client's top opportunities quickly, and it runs
+This is everything that guides sequencing, gathered into one named bundle. It covers the
+part of a diagnostic where the client's top opportunities are picked, and it runs
 straight out of the kit as a facilitated session pack. The client keeps it, and can
 repeat it every quarter and at every reorganisation.
 
@@ -61,8 +61,8 @@ come in only as the gates that decide whether a route is open.
 4. **How strong is the evidence underneath?** Deep evidence supports a commitment. Thin
    evidence supports a verification step before anything is built.
 5. **What does it cost to try?** Grade the effort route by route and use it to order the
-   starting set. Effort decides the order and should never decide the worth. A hard
-   route at the top of the discovery still outranks an easy one at the bottom.
+   starting set. Use effort to set the order, never to judge what a route is worth. A
+   hard route at the top of the discovery still outranks an easy one at the bottom.
 6. **What does the route assume, and who owns testing that?** State the assumption, name
    an owner, and test it before funding the work.
 

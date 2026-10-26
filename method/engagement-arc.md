@@ -2,8 +2,8 @@
 
 The kit runs in two shapes. One is the six-week reference arc, which has been proven end
 to end. The other is the two-week fast diagnostic, which is the kit's main scenario. Its
-day-by-day runbook is not written yet. It will go in `fast-path-runbook.md`, written
-against this arc once the next phase of work has rehearsed the fast path.
+day-by-day runbook is not written yet. It will go in `fast-path-runbook.md` once the
+fast path has been rehearsed end to end, which is the kit's next planned build step.
 
 Both shapes deliver the same core. Conversations and documents come in, and they produce
 observations tied to evidence, opportunities placed on value streams, and the 20-area
@@ -25,9 +25,9 @@ can stand on its own, a versioned pack, and a choosing session in the diary.
 - Getting interviews done is what sets the pace of the whole project. Nothing else can
   start until sessions are in the diary, holidays eat whole weeks, and there may be a
   dozen leads to book. Send every invite in week one, or the schedule never recovers.
-- Treat days as a budget to track, not a rhythm to settle into. On a fixed-scope
-  engagement, log the days used after every working session. Days you do not use cannot
-  be billed later, and any overrun comes out of margin.
+- Track the days against the budget as you go. On a fixed-scope engagement, log the days
+  used after every working session. Days you do not use cannot be billed later, and any
+  overrun comes out of margin.
 - Ring-fence a full day for the readout. The readout is what sells the next piece of
   work, so it must not be squeezed into whatever time is left.
 - A wary client decides whether the work is landing well before the readout, usually

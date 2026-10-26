@@ -1,4 +1,4 @@
-# The stage arc: context, not constraint
+# The stage arc and what the earlier pipeline taught
 
 The reference pipeline proved a processing arc of six stages: **intake → observe →
 resolve and confirm → landscape → converge → export**. The order is right, and each
@@ -132,7 +132,7 @@ was built.
 
 **Hard to update.** Deep maps were assembled by hand in working directories, with
 scratch scripts doing the consistency work. Nothing could be regenerated, and every edit
-to the narrative meant recounting figures by hand across five surfaces.
+to the narrative meant recounting figures by hand across five places.
 
 **v0.1.** Skills (`skills/draft-map.md`, `skills/draft-brief.md`) draft into the
 templates, and every figure is read from the facts manifest. Regenerating is a rebuild
@@ -153,8 +153,8 @@ rendered pages found problems the checkers could not.
 
 **Hard to update.** Nearly everything the client received was assembled by hand. Joins
 on display text silently broke 31 workbook cells. Renames had to be carried across five
-surfaces by hand. The round trip for publishing lived in scratch scripts that were
-rebuilt from memory each session, and the facts sheet was maintained by hand.
+places by hand. The round trip for publishing lived in scratch scripts that were rebuilt
+from memory each session, and the facts sheet was maintained by hand.
 
 **v0.1.** Scripts own export from start to finish. The `facts` script builds the
 manifest with provenance, `check` handles lint, budgets, figures and layout, and

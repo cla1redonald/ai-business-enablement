@@ -40,11 +40,10 @@ skills and subagents inside signed-in sessions, is secure by default, because a 
 never see more than its user may. The same fact limits it. An automation stops on the
 day its author leaves, and no run can serve a workflow wider than its owner can see.
 
-Scoping permissions is more than good hygiene. Most connectors grant everything once
-they are approved, and combined with connected email that is a live exposure to prompt
-injection. Scoped permissions limit how much damage is possible without removing the
-risk. That makes scoping first-wave work with a named owner, and it still needs regular
-review afterwards.
+Most connectors grant everything once they are approved, and combined with connected
+email that is a live exposure to prompt injection. Scoped permissions limit how much
+damage is possible without removing the risk. That makes scoping first-wave work with a
+named owner, and it still needs regular review afterwards.
 
 ## 2. The agent infrastructure layers (a framework for judgement, not an assessment)
 
@@ -125,14 +124,12 @@ this. The managed route buys time on every one of those requirements and removes
 them permanently. They stop being avoidable at roughly the point where the internal
 marketplace succeeds.
 
-Two findings from published research are worth carrying, once you have checked they are
-still current. The first warns against over-preparing. Imperfect data should not stop
-progress, and high-value cases can be piloted in fragmented environments, so the finding
-about internal data must not turn into "nothing can start". The second warns against
-under-estimating the work. Fewer than one in ten agentic programmes reach meaningful
-scale, and the reason is rarely the model. It is fragmentation, missing controls and
-absent lifecycle management, which is the argument for doing one thing properly with
-governance attached.
+Two cautions are worth carrying. The first is against over-preparing. Imperfect data
+should not stop progress, and high-value cases can be piloted in fragmented
+environments, so the finding about internal data must not turn into "nothing can start".
+The second is against under-estimating the work. When agentic programmes stall, the
+reason is rarely the model. It is fragmentation, missing controls and absent lifecycle
+management, which is the argument for doing one thing properly with governance attached.
 
 ## 4. Workflow shapes and the graduation path
 
@@ -182,5 +179,5 @@ starts, against the team's own baseline. In a regulated business, the telemetry 
 evidence for audit and compliance as much as evidence of value, and assurance is far
 cheaper to build before scale than to add afterwards. The review gate plus one shared
 verification pattern is how one person's win becomes something the whole company can
-use. The finding worth repeating to clients is this one. When a skill gives confidently
-wrong answers, the root cause is usually the home-made checker.
+use. Tell clients that when a skill gives confidently wrong answers, the cause is
+usually its home-made checker.

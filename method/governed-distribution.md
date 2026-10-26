@@ -35,16 +35,14 @@ the review path by how fast things change. Skills go through a lightweight merge
 lane that includes the licence check. Connectors and MCP servers go through the fuller
 security review, with a quicker lane for vendors already under contract.
 
-Be honest about what the supplier can and cannot do. Vendor features that scan skills
+Say plainly what the supplier's tools cannot do. Vendor features that scan skills
 usually sit on higher tiers, and may not be available at all under zero-data-retention
 configurations. In that case the gate has to carry that load on the current plan.
 
 ## The verification pattern
 
-The same thing comes up again and again. Skills that work in general give confidently
-wrong answers until someone debugs them by hand, and each one has its own home-made
-checker. **When a skill gives confidently wrong answers, the root cause is usually the
-home-made checker.**
+Skills that work in general often give confidently wrong answers until someone debugs
+them by hand. Each has its own home-made checker, and that checker is usually the cause.
 
 The recommendation is one shared pattern. A harness runs the cases, applies the checks
 and reports the results, and each skill supplies only its own cases and expected
@@ -64,10 +62,10 @@ looks like this.
   specific criteria, never "AI for a function" in general, and the record of what was
   not approved protects the business later.
 
-Verification belongs inside the tools, not in a policy clause people are asked to
-remember. A skill that carries its own checks can be enforced, and a written requirement
-cannot. Finish the first evaluation before starting a second one. One finished example
-is worth more than three started ones, and it becomes the template the gate points to.
+Put the checks inside the tools, because a check that runs with the skill can be
+enforced and a policy clause relies on memory. Finish the first evaluation before
+starting a second one. One finished example is worth more than three started ones, and
+it becomes the template the gate points to.
 
 ## Why this sells
 

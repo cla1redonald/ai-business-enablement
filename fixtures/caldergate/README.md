@@ -42,8 +42,8 @@ Some shapes are deliberate, and worth knowing about before you compare outputs.
 
 - **No pain scores and no measured timings exist anywhere.** Every figure is
   self-reported, the maps say "pain scored on 0", and all four Proof areas are rated
-  gap. That is an honest record of what these interviews captured, and nothing has been
-  left out.
+  gap. That reflects what these interviews actually captured. No scores were collected,
+  so none were dropped.
 - **No area rates in place** (a 0/6/14 roll-up). This is a business that adopted AI
   person by person, and its mix is deliberately unlike any real engagement's.
 - **Every stream carries at least one gap.** So the quick win is built from open
