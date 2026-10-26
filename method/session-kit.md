@@ -134,7 +134,7 @@ turned into a skill, then skills chained into a system that runs on its own.
 - The follow-along is the point. It is a DO block of about 15 minutes where everyone
   builds the thing on their own machine, written for the most limited setup in the room
   (browser only, no admin rights), with success criteria on the slide. Never cut the
-  hands-on part, and cut elsewhere if time runs short.
+  hands-on part to save time. Cut a demo instead.
 - Put templates on screen and in the channel, and post the recordings and steps
   afterwards, so the goal can be "two or three finished" rather than thirty.
 - Prepare a table of what can go wrong live, such as a locked-down laptop, a missing
@@ -152,7 +152,7 @@ turned into a skill, then skills chained into a system that runs on its own.
   date as fact.
 - Present from a 16:9 window, have someone watching the chat, test the login for the
   poll tool, and rehearse the live demo once. Protect the part where you show "what I do
-  when it gets it wrong", because that is the most valuable part.
+  when it gets it wrong", and cut elsewhere if time runs short.
 
 **The fictional sandbox.** Demos run in a company folder that is entirely fictional,
 never in client or personal material. It holds a house-rules context file ("never invent
