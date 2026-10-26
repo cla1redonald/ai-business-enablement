@@ -1,8 +1,9 @@
 # The engagement workspace
 
-Every engagement runs in its own workspace folder, outside this repo (live client
-workspaces never enter it; the synthetic one under `fixtures/` is the only exception
-and the worked example). The four tools operate on this layout and nothing else.
+Every engagement runs in its own workspace folder outside this repo. Live client
+workspaces never enter the repo. The only exception is the synthetic workspace under
+`fixtures/`, which is the worked example. The four tools work on this layout and on
+nothing else.
 
 ```
 <engagement>/
@@ -45,10 +46,10 @@ and the worked example). The four tools operate on this layout and nothing else.
 }
 ```
 
-The client's own name appears in their deliverables; **other** organisations
-(prospects, customers, suppliers where sensitive) are tokenised. The `names` list
-feeds the engagement copy of `check.config.json`; the `company_tokens` keys are what
-artefacts may contain, and the mapping's right-hand side lives only here.
+The client's own name appears in its deliverables, but **other** organisations
+(prospects, customers, and suppliers where that is sensitive) are tokenised. The
+`names` list feeds the engagement's copy of `check.config.json`. Artefacts may contain
+the `company_tokens` keys, and the values they map to exist only in this file.
 
 ## data/landscape.json (confirmed at the gate)
 
@@ -75,11 +76,15 @@ artefacts may contain, and the mapping's right-hand side lives only here.
 }
 ```
 
-Rules the tools enforce: IDs are stable and never reused; `impact`, `effort`,
-`functions`, `streams` may be null or empty (recorded gaps in the data, counted and
-reported, never errors); `quantified` is present with figure AND unit or absent
-entirely; an opportunity's `gaps`/`streams` reference existing IDs; per-gap waiting
-counts and per-stream membership and source counts are always derived, never stored.
+The tools enforce these rules.
+
+- IDs are stable and never reused.
+- `impact`, `effort`, `functions` and `streams` may be null or empty. That is a gap in
+  the data, which is counted and reported, and never an error.
+- `quantified` is either present with a figure AND a unit, or absent entirely.
+- An opportunity's `gaps` and `streams` must reference IDs that exist.
+- Waiting counts for each gap, and membership and source counts for each stream, are
+  always derived and never stored.
 
 ## data/readiness.json (confirmed at the gate)
 
@@ -94,13 +99,13 @@ counts and per-stream membership and source counts are always derived, never sto
 }
 ```
 
-Exactly 20 areas, four per enabler, canonical order, ratings from the four-value
-scale. Roll-up counts are derived by `facts.py`.
+There are exactly 20 areas, four per enabler, in canonical order, and every rating
+comes from the four-value scale. `facts.py` derives the roll-up counts.
 
 ## observations/obs-<source_id>.json
 
-The working layer between a source and the landscape; shaped after
-`skills/schemas/landscape-observation.schema.json` but minimal:
+This is the working layer between a source and the landscape. It follows the shape of
+`skills/schemas/landscape-observation.schema.json`, cut down to the minimum.
 
 ```json
 {
@@ -116,7 +121,8 @@ The working layer between a source and the landscape; shaped after
 }
 ```
 
-`scale` keys and `stated_dependencies` appear only when the source states them.
-`relay: true` marks the second-hand relay exception: the quote legitimately sits in
-a consultant turn and the claim is indirect client evidence at reduced confidence;
-the checker warns instead of failing on it. Any other consultant-turn quote fails.
+The `scale` keys and `stated_dependencies` appear only when the source states them.
+`relay: true` marks the one exception for second-hand relays. In that case the quote
+rightly sits in a consultant turn, the claim counts as indirect client evidence at
+reduced confidence, and the checker warns rather than failing it. Any other quote
+from a consultant turn fails.

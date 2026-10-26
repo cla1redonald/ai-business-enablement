@@ -1,19 +1,19 @@
 # Results, and what they do and do not show
 
-The README quotes one headline result. This page gives the numbers again with the
-caveats that belong to them.
+The README quotes one headline result. This page gives the same numbers again, with
+the caveats that go with them.
 
 ## The result
 
-The kit was distilled from a real engagement: a two-week AI readiness diagnostic. An
-earlier, heavier pipeline built by the author had processed that engagement's
-evidence. Afterwards the engagement was replayed through this lean rebuild, on the
-same confidential corpus.
+The kit was distilled from a real engagement, a two-week AI readiness diagnostic. The
+evidence from that engagement had first been processed by an earlier, heavier
+pipeline that the author built. Afterwards the engagement was replayed through this
+lean rebuild, on the same confidential corpus.
 
 | Measure | Earlier pipeline | This kit |
 |---|---|---|
 | Observations extracted | 212 | 438 |
-| Observations passing this kit's own mechanical checks (verbatim quote in the cited source, valid locator, no registry name in a claim, valid enums, no quote from a consultant turn). Self-graded: the kit's checker marking the kit's output, so it shows internal consistency, not accuracy against an outside reference | not reported here | 438 of 438 |
+| Observations passing this kit's own mechanical checks (verbatim quote in the cited source, valid locator, no registry name in a claim, valid enums, no quote from a consultant turn). This is self-graded. It is the kit's checker marking the kit's output, so it shows internal consistency and not accuracy against an outside reference | not reported here | 438 of 438 |
 | 20-area readiness ratings matched, with the earlier grid in context | n/a (the reference) | 20 of 20 |
 
 ## Caveats
@@ -41,8 +41,8 @@ available in context when the rebuild rated the areas. Reproducing the ratings s
 the instrument and the evidence rules are consistent with the earlier result. It is
 a consistency check, not an independent test of whether the ratings are right.
 
-**One engagement, one corpus.** Nothing here says how the kit performs on a different
-organisation, sector or transcript quality.
+**It is one engagement on one corpus.** Nothing here says how the kit performs on a
+different organisation, sector or transcript quality.
 
 ## Where the checker earned its place
 

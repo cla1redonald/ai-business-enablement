@@ -1,73 +1,77 @@
 # Governed distribution: the review gate and the verification pattern
 
-The path from one person's working tool to something the whole company can rely on.
-Three controls, usually all within the client's reach at assessment time: the review
-gate, the verification pattern, and the Proof measures. The practical order is the gate
-first, the pattern alongside it, and the measures switched on before the first
-published capability is used in anger. This file is the source of truth; the report
-skeleton's annex B mirrors it.
+This is the path from a tool that works for one person to something the whole company
+can rely on. It rests on three controls, which are usually all within the client's reach
+at the time of the assessment. They are the review gate, the verification pattern and
+the Proof measures. In practice the gate comes first, the pattern is built alongside it,
+and the measures are switched on before anyone uses the first published capability for
+real work. This file is the source of truth, and annex B of the report skeleton mirrors
+it.
 
 ## The review gate
 
-A review gate before company-wide publication, owned by a named engineer, built as a
-one-page rulebook for authors and a checklist for reviewers, enforced in the
-publication pipeline. The gate checks what a skill's instructions actually do before
-publication. The rules that matter most:
+Before anything is published company-wide, it passes a review gate. A named engineer
+owns the gate, which is made up of a one-page rulebook for authors and a checklist for
+reviewers, and it is enforced in the publication pipeline. The gate checks what a
+skill's instructions actually do before the skill is published. These are the rules that
+matter most.
 
-- A skill never touches credentials and never fetches instructions at run time.
-- It holds only the narrowest permissions it needs, and treats everything it reads as
-  data rather than instruction.
-- It stops for confirmation before irreversible actions, and describes itself
-  accurately.
-- A change reaches users only through a version increase, so every published
-  capability stays traceable to what was reviewed.
-- A good skill records what a new colleague could not discover (the organisation's own
-  rules and boundaries) rather than technique the tools already carry.
+- A skill never touches credentials and never fetches instructions while it runs.
+- It holds only the narrowest permissions it needs, and it treats everything it reads as
+  data rather than as instructions.
+- It stops for confirmation before any action that cannot be undone, and it describes
+  itself accurately.
+- A change only reaches users through a version increase, so every published capability
+  can be traced back to what was reviewed.
+- A good skill records what a new colleague could not find out for themselves, meaning
+  the organisation's own rules and boundaries, rather than technique the tools already
+  carry.
 
-Design in from the start, not retrofitted: a licence and provenance check alongside the
-malicious-behaviour check (executable code inside skills makes this live, not
-theoretical), and read-only as the default for new connectors at the moment the
-marketplace opens, while the estate is still small. Split the review path by pace of
-change: skills through a lightweight merge-request lane with the licence check;
-connectors and MCP servers through the fuller security review, with a quick lane for
-vendors already under contract.
+Some things are much harder to add later, so design them in from the start. Run a
+licence and provenance check alongside the check for malicious behaviour, because skills
+that carry executable code make this a real risk. Make read-only the default for new
+connectors from the day the marketplace opens, while the estate is still small. Split
+the review path by how fast things change. Skills go through a lightweight merge-request
+lane that includes the licence check. Connectors and MCP servers go through the fuller
+security review, with a quicker lane for vendors already under contract.
 
-Note the supplier-side limits honestly: vendor skill-scanning features typically sit on
-higher tiers and may be unavailable under zero-data-retention configurations, in which
-case the gate carries that load on the current plan.
+Say plainly what the supplier's tools cannot do. Vendor features that scan skills
+usually sit on higher tiers, and may not be available at all under zero-data-retention
+configurations. In that case the gate has to carry that load on the current plan.
 
 ## The verification pattern
 
-The recurring observation: working skills giving confidently wrong answers until
-debugged by hand, each with its own home-made checker. **When a skill gives confidently
-wrong answers, the root cause is usually the home-made checker.**
+Skills that work in general often give confidently wrong answers until someone debugs
+them by hand. Each has its own home-made checker, and that checker is usually the cause.
 
-The recommendation is one shared pattern: a harness that runs cases, applies checks and
-reports results, with each skill supplying only its own cases and expected answers,
-agreed by the people who know what correct looks like. What good looks like:
+The recommendation is one shared pattern. A harness runs the cases, applies the checks
+and reports the results, and each skill supplies only its own cases and expected
+answers, agreed with the people who know what a correct answer looks like. Good practice
+looks like this.
 
-- Deterministic checks first; any model-based check is calibrated against human
-  judgement before it counts.
-- Infrastructure failures reported separately from wrong answers, so the fix lands in
-  the right place.
-- Twenty to fifty realistic cases per skill as a practical starting point.
-- Experimentation stays free against a growing working set; graduation reads a frozen
-  set that only change control may alter, judged on independent thresholds for
-  quality, safety, cost and consistency, never one blended score.
-- Sign-off records its own boundary. What passes is a specific capability against
-  specific criteria, never AI for a function in general, and the record of what was
+- Deterministic checks come first. Any check that uses a model is calibrated against
+  human judgement before it counts.
+- Failures in the infrastructure are reported separately from wrong answers, so the fix
+  goes to the right place.
+- Twenty to fifty realistic cases per skill is a practical place to start.
+- People can experiment freely against a working set that keeps growing. To graduate, a
+  skill is tested against a frozen set that only change control can alter, and judged on
+  separate thresholds for quality, safety, cost and consistency, never on one blended
+  score.
+- A sign-off records its own limits. What passes is a specific capability against
+  specific criteria, never "AI for a function" in general, and the record of what was
   not approved protects the business later.
 
-Verification belongs inside the tools rather than in a policy clause people are asked
-to remember: a skill that carries its own checks is enforceable, a written requirement
-is not. Finish the first evaluation before starting a second; one finished example is
-worth more than three started ones, and it becomes the template the gate points at.
+Put the checks inside the tools, because a check that runs with the skill can be
+enforced and a policy clause relies on memory. Finish the first evaluation before
+starting a second one. One finished example is worth more than three started ones, and
+it becomes the template the gate points to.
 
 ## Why this sells
 
-The person who built the risky tool usually names the risk unprompted, and better than
-any policy clause ("people would come back saying the assistant told them so"). The
-control is what lets a careful owner publish. Frame the gate and the pattern as the
-route by which one person's win becomes company capability, never as compliance
-overhead: distribution with review in front of it raises the return on every other
-investment in the report.
+The person who built the risky tool usually names the risk without being asked, and puts
+it better than any policy clause would ("people would come back saying the assistant
+told them so"). The control is what allows a careful owner to publish. So present the
+gate and the pattern as the way one person's win becomes something the whole company can
+use, and never as compliance overhead. When distribution has a review in front of it,
+every other investment in the report pays back more.

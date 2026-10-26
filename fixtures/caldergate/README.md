@@ -1,61 +1,63 @@
 # The Caldergate fixture
 
-One fully synthetic engagement exercising every module: Caldergate Freight, an
-invented 140-person UK freight forwarder, assessed by an invented consultant (Jordan
-Vale, Fieldnote Advisory) in September 2027. Every person, company, tool, figure and
-date is fictional; the tool names (Loadstone, Ledgerline, Portwick, Filestead,
-Tallybook, Verrin) are meant to resemble no real vendor. This fixture is the worked example of
-the whole flow and the kit's regression surface: update it with every module change,
-or a private replay of a real engagement becomes the only real test.
+This is one engagement, invented from start to finish, that exercises every module in
+the kit. The client is Caldergate Freight, an invented 140-person UK freight forwarder,
+assessed by an invented consultant (Jordan Vale, Fieldnote Advisory) in September 2027.
+Every person, company, tool, figure and date is fictional, and the tool names
+(Loadstone, Ledgerline, Portwick, Filestead, Tallybook, Verrin) are meant to resemble no
+real vendor. The fixture is the worked example of the whole flow, and it is also the
+kit's regression surface. Update it with every module change, or the only real test left
+is a private replay of a real engagement.
 
 ## What each source exercises
 
 | Source | Test cases planted |
 |---|---|
-| `2027-09-20_kickoff-sponsor.md` | Sponsor's verbal company picture; a second-hand estimate later contradicted (the 20-minute quote); spend-visible-value-invisible |
-| `2027-09-22_ops-team.md` | Quantified self-reported timings; a consultant bottleneck suggestion that must NOT become evidence (the lead's own weighing must); a second-hand relay confirmed in the room; a stranded prototype with stated permission uncertainty; vocatives to tokenise |
-| `2027-09-23_finance.md` | The no-home-for-operating-data pattern; stale-CSV dashboards; a stated controls condition |
-| `2027-09-24_customer-service.md` | A first-person consultant claim to reject ("I bet..."); the abandoned-assistant story that anchors verification; an absent churn signal |
-| `2027-09-27_sales.md` | A three-way contradiction (sponsor vs practice vs process doc); a deliberate AI boundary with a stated condition |
-| `2027-09-28_it.md` | Direct observation (the console review); the laptop automation; coarse permissions as the named blocker; the two-person capacity pattern |
-| `2027-09-29_customs-working-session.md` | The consultant-led session sub-type: the demo is the consultant's work, the clerk's condition is the evidence |
-| `doc_ai-usage-note.md` | A partial policy: strong clause, narrow coverage, no owner |
-| `doc_quote-process.md` | A document claim contradicted by practice; an official process depending on the laptop automation |
-| `2027-09-30_allhands-clip.md` | **Refused**: no participants, no speaker labels, attribution impossible |
-| `note_recollection-carrier-call.md` | **Refused as evidence**: consultant recollection, same-hour, marked; background only |
+| `2027-09-20_kickoff-sponsor.md` | The sponsor's verbal picture of the company; a second-hand estimate that is later contradicted (the 20-minute quote); spend that is visible while the value is not |
+| `2027-09-22_ops-team.md` | Timings people report for themselves; a bottleneck the consultant suggests, which must NOT become evidence (the lead's own weighing must); a second-hand relay confirmed in the room; a stranded prototype whose owner is unsure it was allowed; vocatives to tokenise |
+| `2027-09-23_finance.md` | Operating data with nowhere to live; dashboards built on stale CSVs; a condition on controls that the speaker states |
+| `2027-09-24_customer-service.md` | A first-person claim by the consultant, to be rejected ("I bet..."); the story of the abandoned assistant, which anchors the verification finding; a churn signal that is missing |
+| `2027-09-27_sales.md` | A three-way contradiction (the sponsor's account against practice against the process doc); a deliberate limit on AI, with a stated condition |
+| `2027-09-28_it.md` | Direct observation (the console review); the automation running on a laptop; coarse permissions named as the blocker; the pattern of two people holding all the capacity |
+| `2027-09-29_customs-working-session.md` | The consultant-led session sub-type, where the demo is the consultant's work and the clerk's condition is the evidence |
+| `doc_ai-usage-note.md` | A partial policy, with a strong clause, narrow coverage and no owner |
+| `doc_quote-process.md` | A claim in a document that practice contradicts; an official process that depends on the laptop automation |
+| `2027-09-30_allhands-clip.md` | Refused, because it has no participants and no speaker labels, so attribution is impossible |
+| `note_recollection-carrier-call.md` | Refused as evidence. It is the consultant's recollection, written within the hour and marked as such, and used as background only |
 
 ## The worked run (committed in `workspace/`, apart from the pack zip)
 
-`intake/` (registry, source ledger) → `observations/` (47 evidence-bound
-observations) → `data/landscape.json` (21 opportunities, 6 streams, 6 gaps) and
-`data/readiness.json` (20 areas) → `facts.json` (`tools/facts.py`) →
-`artefacts/` (report on the skeleton, 7 tokenised summaries, 2 maps, 2 briefs,
-workbook via `tools/workbook.py`) → `packs/` (`tools/pack.py`, audited baseline; the
-`.zip` is gitignored and rebuilt by the tool, so only the unzipped folder is
-committed).
-`check.config.json` is the engagement copy of the lint config with the fixture's
-names list; the report passes `check.py` with the facts manifest.
+The run goes from `intake/` (registry and source ledger) to `observations/` (47
+observations tied to evidence), then to `data/landscape.json` (21 opportunities, 6
+streams, 6 gaps) and `data/readiness.json` (20 areas). From there `tools/facts.py`
+builds `facts.json`. Next come the `artefacts/`, which are the report on the skeleton, 7
+tokenised summaries, 2 maps, 2 briefs and the workbook from `tools/workbook.py`. Last is
+`packs/`, the audited baseline built by `tools/pack.py`. Its `.zip` is gitignored and
+rebuilt by the tool, so only the unzipped folder is committed.
 
-Deliberate shapes worth knowing before comparing outputs:
+`check.config.json` is the engagement's copy of the lint config, with the fixture's
+names list, and the report passes `check.py` with the facts manifest.
 
-- **No pain scores and no measured timings exist anywhere**: every figure is self
-  reported, the maps say "pain scored on 0", and Proof rates all-gap. That is the
-  honest capture of these interviews, not an omission.
-- **No area rates in place** (0/6/14 roll-up): a business that adopted person by
-  person, different from any real engagement's mix by design.
-- **Every stream carries at least one gap**, so the quick win is built from open
-  opportunities on the handoffs rather than a fully open stream, exercising the
-  where-to-start kit's honesty rather than its happy path.
+Some shapes are deliberate, and worth knowing about before you compare outputs.
 
-## v0.1 simplifications (recorded, not accidental)
+- **No pain scores and no measured timings exist anywhere.** Every figure is
+  self-reported, the maps say "pain scored on 0", and all four Proof areas are rated
+  gap. That reflects what these interviews actually captured. No scores were collected,
+  so none were dropped.
+- **No area rates in place** (a 0/6/14 roll-up). This is a business that adopted AI
+  person by person, and its mix is deliberately unlike any real engagement's.
+- **Every stream carries at least one gap.** So the quick win is built from open
+  opportunities on the handoffs rather than from a fully open stream, which tests how
+  honestly the where-to-start kit handles a harder case rather than the easy one.
 
-- **The dates are invented.** The engagement window (September 2027) is later than
-  the kit's own v0.1 build date and refers to no real period. File names and
-  locators carry the dates, so they were left as they are rather than shifted.
+## Simplifications in v0.1 (recorded, not accidental)
 
-- Sources are committed raw (fictional names included) and observation quotes verify
-  against them verbatim; tokenisation applies to every shareable artefact and is
-  enforced by the pack audit and the checker's names list. In a real engagement,
+- **The dates are invented.** The engagement window (September 2027) is later than the
+  kit's own v0.1 build date and refers to no real period. File names and locators carry
+  the dates, so they were left as they are rather than shifted.
+- Sources are committed raw, fictional names included, and the observation quotes verify
+  against them verbatim. Tokenisation applies to every artefact that can be shared, and
+  it is enforced by the pack audit and the checker's names list. In a real engagement,
   `sources/` and `intake/registry.md` never enter any repo or pack.
-- The report is markdown (no branded-render pipeline in the fixture); layout QA on a
-  rendered PDF is exercised only in real engagements.
+- The report is markdown, because the fixture has no branded rendering pipeline. Layout
+  QA on a rendered PDF is only exercised in real engagements.
